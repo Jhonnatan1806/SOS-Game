@@ -35,13 +35,13 @@ export default function GamePlay() {
     const [gameController, setGameController] = useState<GameController>();
     const [gameState, setGameState] = useState<GameState>(GameState.PLAYING);
     const [listLines, setListLine] = useState<Line[]>([]);
-    const [recordPlay, setRecordPlay] = useState<boolean>(false);
+
     const gridColumns = {
         gridTemplateColumns: `repeat(${gameSize}, minmax(0, 1fr))`,
     };
     const sizeCell = {
-        width: `${390 / gameSize}px`,
-        height: `${390 / gameSize}px`,
+        width: `${340 / gameSize}px`,
+        height: `${340 / gameSize}px`,
     };
 
     useEffect(() => {
@@ -78,7 +78,7 @@ export default function GamePlay() {
         return lines.map((line, index) => {
             const color = currentTurn === "ROJO" ? "bg-red-500" : "bg-blue-500";
             const angleLine = angle(line);
-            const sizeBox = 390 / gameSize;
+            const sizeBox = 340 / gameSize;
             const widthLine =
                 angleLine === 45 || angleLine === 135
                     ? 2.8 * sizeBox
