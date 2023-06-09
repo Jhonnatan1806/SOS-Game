@@ -159,7 +159,7 @@ export default function GamePlay() {
         }
     };
 
-    const handleWriteCell = (row: number, column: number, letter: Letter) => {
+    const handleWriteCell = (row: number, column: number, letter: Letter, replay: boolean = false) => {
         const moveCompleted = gameController?.makeMove(row, column, letter);
         if (!moveCompleted) {
             return;
@@ -171,7 +171,7 @@ export default function GamePlay() {
             return;
         }
         updateTurn();
-        if (recordPlay) {
+        if (replay) {
             return;
         }
         handleBotMove();
@@ -211,7 +211,6 @@ export default function GamePlay() {
 
     const handlePlay = () => {
         const record = gameController?.getRecord().getClone() ?? null;
-        setRecordPlay(true);
         handleNewGame();
         console.log(record);
         if (record) {
@@ -222,11 +221,11 @@ export default function GamePlay() {
                     handleWriteCell(
                         movement.row,
                         movement.column,
-                        movement.letter
+                        movement.letter,
+                        true
                     );
                 }, i * 500);
             }
-            setRecordPlay(false);
         }
     };
 
