@@ -1,5 +1,5 @@
 import React from "react";
-import { GameProvider } from "@/hooks/useContextGame";
+import { GameProvider } from "@/utils/useContextGame";
 import "./globals.css";
 
 export const metadata = {

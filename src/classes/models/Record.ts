@@ -1,4 +1,4 @@
-import { Movement } from "@/classes/models/Movement";
+import { Movement } from "@/classes/interfaces/Movement";
 import { Letter } from "@/classes/enums/Letter";
 
 export class Record {

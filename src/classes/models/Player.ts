@@ -1,11 +1,12 @@
 import { Score } from "@/classes/models/Score";
+import { GamePlayer } from "@/classes/enums/GamePlayers";
 
 /**
  * @class Player
  * @classdesc Esta clase representa un jugador del juego SOS.
  */
 export class Player {
-	private readonly name: string;
+	private readonly name: GamePlayer;
 	private readonly score: Score;
     private readonly bot: boolean;
 
@@ -15,7 +16,7 @@ export class Player {
 	 * @constructor
 	 * @param {string} name - El nombre del jugador.
 	 */
-	constructor(name: string, bot: boolean = false) {
+	constructor(name: GamePlayer, bot: boolean = false) {
 		this.name = name;
 		this.score = new Score();
         this.bot = bot;
@@ -23,9 +24,9 @@ export class Player {
 
 	/**
 	 * Obtiene el nombre del jugador.
-	 * @returns {string} - El nombre del jugador.
+	 * @returns {GamePlayer} - El nombre del jugador.
 	 */
-	public getName(): string {
+	public getName(): GamePlayer {
 		return this.name;
 	}
 

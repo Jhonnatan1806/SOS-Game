@@ -1,5 +1,5 @@
 export enum GameMode {
-    PVP = "PvP",
-    PVC = "PvC",
-    CVC = "CvC",
+    PVP = "J vs J",
+    PVC = "J vs IA",
+    CVC = "IA vs IA",
 }

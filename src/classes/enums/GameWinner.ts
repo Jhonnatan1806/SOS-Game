@@ -4,13 +4,13 @@ export enum GameWinner {
      * 
      * @type {string}
      */
-    WINNER_PLAYER1 = "RED",
+    WINNER_PLAYER1 = "ROJO",
     /**
      * Ganador del juego BLUE
      * 
      * @type {string}
      */
-    WINNER_PLAYER2 = "BLUE",
+    WINNER_PLAYER2 = "AZUL",
     /**
      * Empate
      * 

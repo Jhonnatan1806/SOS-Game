@@ -6,7 +6,7 @@ import { Game } from "@/classes/models/Game";
 import { GameType } from "@/classes/enums/GameType";
 import { GameState } from "@/classes/enums/GameState";
 import { GameWinner } from "@/classes/enums/GameWinner";
-import { Line } from "@/classes/models/Line";
+import { Line } from "@/classes/interfaces/Line";
 import { Record } from "@/classes/models/Record";
 
 /**
@@ -174,5 +174,9 @@ export class GameController {
 
     public getRecord(): Record {
         return this.record;
+    }
+
+    public getScores(): number[] {
+        return this.game.getPlayers().map((player) => player.getScore().getPoints());
     }
 }

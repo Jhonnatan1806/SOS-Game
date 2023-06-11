@@ -6,17 +6,20 @@ import Flex from "@/components/core/Flex";
 import Layout from "@/components/core/Layout";
 import Switch from "@/components/core/Switch";
 import Modal from "@/components/core/Modal";
-import { useGameContext } from "@/hooks/useContextGame";
+import { useGameContext } from "@/utils/useContextGame";
 import { FaSadTear } from "react-icons/fa";
+import { GameMode } from "@/classes/enums/GameMode";
+import { GameType } from "@/classes/enums/GameType";
+import { Difficulty } from "@/classes/enums/Difficulty";
 
 
 export default function SettingGame() {
     const gameContext = useGameContext();
     const router = useRouter();
     const [gameSize, setGameSize] = useState(3);
-    const [gameType, setGameType] = useState<string>("Simple");
-    const [gameMode, setGameMode] = useState<string>("PvP");
-    const [gameDifficulty, setGameDifficulty] = useState<string>("Fácil");
+    const [gameType, setGameType] = useState<string>(GameType.SIMPLE_GAME);
+    const [gameMode, setGameMode] = useState<string>(GameMode.PVP);
+    const [gameDifficulty, setGameDifficulty] = useState<string>(Difficulty.EASY);
     const [modal, setModal] = useState(false);
     
 	function handleDecrement() {
@@ -48,7 +51,7 @@ export default function SettingGame() {
         gameContext?.setGameType(gameType);
         gameContext?.setGameMode(gameMode);
         gameContext?.setGameDifficulty(gameDifficulty);
-        if(gameType === "General"){
+        if(gameType === GameType.GENERAL_GAME){
             setModal(true);
             return;
         };
@@ -77,15 +80,15 @@ export default function SettingGame() {
                         <h2 className="text-2xl font-bold">
 							Seleccione el tipo de juego
 						</h2>
-						<Switch options={["Simple", "General"]} onOptionChange={handleGameTypeChange}/>
+						<Switch options={[GameType.SIMPLE_GAME, GameType.GENERAL_GAME]} onOptionChange={handleGameTypeChange}/>
 						<h2 className="text-2xl font-bold">
 							Seleccione el modo de juego
 						</h2>
-						<Switch options={["PvP", "PvC", "CvC"]} onOptionChange={handleGameModeChange}/>
+						<Switch options={[GameMode.PVP, GameMode.PVC, GameMode.CVC]} onOptionChange={handleGameModeChange}/>
 						<h2 className="text-2xl font-bold">
 							Seleccione la dificultad
 						</h2>
-						<Switch options={["Facil", "Intermedio", "Dificil"]} onOptionChange={handleGameDifficultyChange}/>
+						<Switch options={[Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]} onOptionChange={handleGameDifficultyChange}/>
 						<h2 className="text-2xl font-bold">
 							Seleccione el tamaño
 						</h2>

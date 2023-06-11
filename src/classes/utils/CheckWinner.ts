@@ -1,7 +1,7 @@
 import { Letter } from "@/classes/enums/Letter";
 import { GameType } from "@/classes/enums/GameType";
 import { Board } from "@/classes/models/Board";
-import { Line } from "@/classes/models/Line";
+import { Line } from "@/classes/interfaces/Line";
 
 export class CheckWinner {
     private board: Board;
