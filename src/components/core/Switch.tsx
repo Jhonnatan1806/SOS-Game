@@ -3,8 +3,8 @@ import { useState } from "react";
 import classnames from "classnames";
 
 interface SwitchProps {
-	options: string[];
-    onOptionChange: (option: string) => void;
+	options: string[] | any[];
+    onOptionChange: (option: string | any ) => void;
     disabled?: boolean;
 }
 

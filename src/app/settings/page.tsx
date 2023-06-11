@@ -17,9 +17,9 @@ export default function SettingGame() {
     const gameContext = useGameContext();
     const router = useRouter();
     const [gameSize, setGameSize] = useState(3);
-    const [gameType, setGameType] = useState<string>(GameType.SIMPLE_GAME);
-    const [gameMode, setGameMode] = useState<string>(GameMode.PVP);
-    const [gameDifficulty, setGameDifficulty] = useState<string>(Difficulty.EASY);
+    const [gameType, setGameType] = useState<GameType>(GameType.SIMPLE_GAME);
+    const [gameMode, setGameMode] = useState<GameMode>(GameMode.PVP);
+    const [gameDifficulty, setGameDifficulty] = useState<Difficulty>(Difficulty.EASY);
     const [modal, setModal] = useState(false);
     
 	function handleDecrement() {
@@ -34,15 +34,15 @@ export default function SettingGame() {
 		}
 	}
 
-    const handleGameTypeChange = (option: string) => {
+    const handleGameTypeChange = (option: GameType) => {
         setGameType(option);
     };
 
-    const handleGameModeChange = (option: string) => {
+    const handleGameModeChange = (option: GameMode) => {
         setGameMode(option);
     };
 
-    const handleGameDifficultyChange = (option: string) => {
+    const handleGameDifficultyChange = (option: Difficulty) => {
         setGameDifficulty(option);
     };
 
