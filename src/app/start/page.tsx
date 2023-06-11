@@ -37,7 +37,6 @@ import { Movement } from "@/classes/interfaces/Movement";
 import GameBoard from "@/components/custom/GameBoard";
 
 export default function GamePlay() {
-    // context and routes
     const gameContext = useGameContext();
     const router = useRouter();
 
@@ -48,7 +47,6 @@ export default function GamePlay() {
     const [isUIDisabled, setIsUIDisabled] = useState<boolean>(false);
     const [isGameInProgress, setIsGameInProgress] = useState<boolean>(false);
 
-    //essentials
     const [essentials] = useState<Essentials>({
         gameSize: gameContext?.gameSize ?? 3,
         gameType: gameContext?.gameType ?? GameType.SIMPLE_GAME,
@@ -56,7 +54,6 @@ export default function GamePlay() {
         gameDifficulty: gameContext?.gameDifficulty ?? Difficulty.EASY,
     });
 
-    //additionals
     const [grid, setGrid] = useState<string[][]>([[]]);
     const [winner, setWinner] = useState<GameWinner>(GameWinner.NONE);
     const [currentTurn, setCurrentTurn] = useState<GamePlayer>(
@@ -64,7 +61,6 @@ export default function GamePlay() {
     );
     const [scores, setScores] = useState<number[]>([0, 0]);
 
-    // inicio del juego
     useEffect(() => {
         const game = new Game(
             essentials.gameSize,
@@ -76,7 +72,6 @@ export default function GamePlay() {
         setGrid(game.getBoard().getGrid());
     }, [essentials]);
 
-    // acciones de botones
     const handleCloseModal = (): void => {
         setIsModalOpen(false);
     };
@@ -89,7 +84,6 @@ export default function GamePlay() {
         router.push("/");
     };
 
-    // reset game
     const handleReset = (): void => {
         gameController?.resetGame();
         updateVariables();
@@ -98,8 +92,7 @@ export default function GamePlay() {
         setIsUIDisabled(true);
     };
 
-    // repetir jugada
-    const handleReplay = async () => {
+    const handleReplay = async (): Promise<void> => {
         if (!gameController) {
             return;
         }
@@ -107,35 +100,32 @@ export default function GamePlay() {
         const movements = gameController.getRecord().getMovements();
         handleReset();
 
-        const delay = (ms: number) =>
+        const delay = (ms: number): Promise<void> =>
             new Promise((resolve) => setTimeout(resolve, ms));
 
-        for (let i = 0; i < movements.length; i++) {
-            const movement = movements[i];
+        for (const movement of movements) {
             await delay(500);
             executeMovement(movement);
         }
     };
 
-    const executeMovement = (movement: Movement) => {
+    const executeMovement = (movement: Movement): void => {
         writeCell(movement.row, movement.column, movement.letter);
         updateVariables();
         changeTurn();
     };
 
-    // cambiar letra
-    const handleLetterChange = (option: string) => {
+    const handleLetterChange = (option: string): void => {
         option === "S"
             ? setCurrentLetter(Letter.S)
             : setCurrentLetter(Letter.O);
     };
 
-    // escribir en la celda
     const handleCell = (row: number, column: number, letter: Letter): void => {
         setIsGameInProgress(true);
 
         if (essentials.gameMode === GameMode.CVC) {
-            const playComputerTurns = (turnCount: number) => {
+            const playComputerTurns = (turnCount: number): void => {
                 if (turnCount >= essentials.gameSize ** 2 || isFinished()) {
                     return;
                 }
@@ -177,16 +167,16 @@ export default function GamePlay() {
         if (!gameController) {
             return;
         }
-        const delay = (ms: number) =>
-            new Promise((resolve) => setTimeout(resolve, ms));
-        await delay(500);
 
+        const delay = (ms: number): Promise<void> =>
+            new Promise((resolve) => setTimeout(resolve, ms));
+
+        await delay(500);
         writeCellBot();
         updateVariables();
         changeTurn();
     };
 
-    // escribir en celda
     const writeCell = (row: number, column: number, letter: Letter): void => {
         if (!gameController || !gameController.makeMove(row, column, letter)) {
             return;
@@ -194,7 +184,6 @@ export default function GamePlay() {
         check(row, column);
     };
 
-    // escribir en celda bot
     const writeCellBot = (): void => {
         if (!gameController) {
             return;
@@ -203,7 +192,6 @@ export default function GamePlay() {
         writeCell(row, col, letter);
     };
 
-    // revisar SOS
     const check = (row: number, column: number): void => {
         const checkSOS = gameController?.checkSOS(row, column);
         if (checkSOS) {
@@ -212,7 +200,6 @@ export default function GamePlay() {
         }
     };
 
-    // el juego a finalizado
     const isFinished = (): boolean => {
         if (
             !gameController ||
@@ -225,7 +212,6 @@ export default function GamePlay() {
         return true;
     };
 
-    // cambiar Turno
     const changeTurn = (): void => {
         if (!gameController || isFinished()) {
             return;
@@ -233,7 +219,6 @@ export default function GamePlay() {
         gameController.changeCurrentPlayer();
     };
 
-    // actualizar
     const updateVariables = (): void => {
         if (!gameController) {
             return;
@@ -256,13 +241,13 @@ export default function GamePlay() {
                 </Modal>
             ) : null}
             <Layout>
-                <Flex className="flex-col gap-4 text-slate-700 h-screen">
+                <div className="flex flex-col gap-4 text-slate-700 h-screen">
                     <GameControls
                         onSettings={handleSettings}
                         onReset={handleReset}
                         onHome={handleHome}
                     />
-                    <Flex className="flex-col flex-grow justify-center gap-6">
+                    <div className="flex flex-col flex-grow justify-center gap-6">
                         <Scoreboard scores={scores} />
                         <TurnIndicator currentTurn={currentTurn} />
                         <div className="relative">
@@ -273,7 +258,6 @@ export default function GamePlay() {
                                 gameSize={essentials.gameSize}
                                 currentLetter={currentLetter}
                             />
-
                             <div className="absolute top-0 left-0">
                                 <Lines
                                     listLine={completedLines}
@@ -282,7 +266,7 @@ export default function GamePlay() {
                                 />
                             </div>
                         </div>
-                        <Flex className="justify-between">
+                        <div className="flex justify-between">
                             <Switch
                                 options={[Letter.S, Letter.O]}
                                 onOptionChange={handleLetterChange}
@@ -291,9 +275,9 @@ export default function GamePlay() {
                                 handleReplay={handleReplay}
                                 isUIDisabled={isUIDisabled}
                             />
-                        </Flex>
-                    </Flex>
-                </Flex>
+                        </div>
+                    </div>
+                </div>
             </Layout>
         </>
     );
