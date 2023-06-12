@@ -145,7 +145,7 @@ export class GameController {
      * Realiza un movimiento de la Computadora en el tablero
      * y retorna la fila donde se realizó el movimiento.
      *
-     * @return El movimiento del bot.
+     * @returns El movimiento del bot.
      */
     public botMove(): [number, number, Letter] {
         const board = this.game.getBoard();
