@@ -1,7 +1,7 @@
 "use client";
-import { Difficulty } from "@/classes/enums/Difficulty";
-import { GameMode } from "@/classes/enums/GameMode";
-import { GameType } from "@/classes/enums/GameType";
+import { Difficulty } from "@/classes/constants/Difficulty";
+import { GameMode } from "@/classes/constants/GameMode";
+import { GameType } from "@/classes/constants/GameType";
 import React, { createContext, useContext, useState } from "react";
 
 interface GameContextType {

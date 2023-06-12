@@ -1,5 +1,5 @@
 import { Movement } from "@/classes/interfaces/Movement";
-import { Letter } from "@/classes/enums/Letter";
+import { Letter } from "@/classes/constants/Letter";
 
 /**
  * @class Record

@@ -1,4 +1,4 @@
-import { Letter } from "@/classes/enums/Letter";
+import { Letter } from "@/classes/constants/Letter";
 import React from "react";
 
 interface GameBoardProps {

@@ -1,5 +1,5 @@
 import { Score } from "@/classes/models/Score";
-import { GamePlayers } from "@/classes/enums/GamePlayers";
+import { GamePlayers } from "@/classes/constants/GamePlayers";
 
 /**
  * @class Player

@@ -24,13 +24,13 @@ import { GameController } from "@/classes/controllers/GameController";
 import { Game } from "@/classes/models/Game";
 
 // enums and interfaces
-import { GameState } from "@/classes/enums/GameState";
-import { GameWinner } from "@/classes/enums/GameWinner";
-import { GameMode } from "@/classes/enums/GameMode";
-import { Letter } from "@/classes/enums/Letter";
-import { Difficulty } from "@/classes/enums/Difficulty";
-import { GameType } from "@/classes/enums/GameType";
-import { GamePlayers } from "@/classes/enums/GamePlayers";
+import { GameState } from "@/classes/constants/GameState";
+import { GameWinner } from "@/classes/constants/GameWinner";
+import { GameMode } from "@/classes/constants/GameMode";
+import { Letter } from "@/classes/constants/Letter";
+import { Difficulty } from "@/classes/constants/Difficulty";
+import { GameType } from "@/classes/constants/GameType";
+import { GamePlayers } from "@/classes/constants/GamePlayers";
 import { WinLine } from "@/classes/interfaces/WinLine";
 import { Essentials } from "@/classes/interfaces/Essentials";
 import { Movement } from "@/classes/interfaces/Movement";

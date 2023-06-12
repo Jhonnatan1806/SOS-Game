@@ -1,4 +1,4 @@
-import { GamePlayers } from "@/classes/enums/GamePlayers";
+import { GamePlayers } from "@/classes/constants";
 
 /**
  * @class GameWinner

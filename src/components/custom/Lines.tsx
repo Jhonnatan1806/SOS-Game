@@ -1,4 +1,4 @@
-import { GamePlayers } from "@/classes/enums/GamePlayers";
+import { GamePlayers } from "@/classes/constants/GamePlayers";
 import { WinLine } from "@/classes/interfaces/WinLine";
 
 interface Props {

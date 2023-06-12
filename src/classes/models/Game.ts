@@ -1,9 +1,5 @@
-import { Board } from "@/classes/models/Board";
-import { Player } from "@/classes/models/Player";
-import { Difficulty } from "@/classes/enums/Difficulty";
-import { GameType } from "@/classes/enums/GameType";
-import { GameMode } from "@/classes/enums/GameMode";
-import { GamePlayers } from "@/classes/enums/GamePlayers";
+import { Difficulty, GameMode, GamePlayers, GameType} from "@/classes/constants";
+import { Board, Player} from "@/classes/models";
 
 /**
  * @class Game

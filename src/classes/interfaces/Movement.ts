@@ -1,4 +1,4 @@
-import { Letter } from "@/classes/enums/Letter";
+import { Letter } from "@/classes/constants";
 
 /**
  * @class Movement

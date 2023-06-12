@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect} from "react";
+import React, { useState} from "react";
 import { useRouter } from 'next/navigation';
 import ButtonBack from "@/components/core/ButtonBack";
 import Flex from "@/components/core/Flex";
@@ -8,9 +8,9 @@ import Switch from "@/components/core/Switch";
 import Modal from "@/components/core/Modal";
 import { useGameContext } from "@/utils/useContextGame";
 import { FaSadTear } from "react-icons/fa";
-import { GameMode } from "@/classes/enums/GameMode";
-import { GameType } from "@/classes/enums/GameType";
-import { Difficulty } from "@/classes/enums/Difficulty";
+import { GameMode } from "@/classes/constants/GameMode";
+import { GameType } from "@/classes/constants/GameType";
+import { Difficulty } from "@/classes/constants/Difficulty";
 
 
 export default function SettingGame() {

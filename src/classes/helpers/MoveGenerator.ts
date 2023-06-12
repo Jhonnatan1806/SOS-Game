@@ -1,27 +1,21 @@
-import { Letter } from "@/classes/enums/Letter";
-import { Board } from "@/classes/models/Board";
-import { Difficulty } from "@/classes/enums/Difficulty";
-import { Checker } from "@/classes/utils/Checker";
-import { GamePlayers } from "@/classes/enums/GamePlayers";
-import { Movement } from "@/classes/interfaces/Movement";
+import { Difficulty, GamePlayers, Letter } from "@/classes/constants";
+import { Checker } from "@/classes/helpers";
+import { Movement } from "@/classes/interfaces";
+import { Board } from "@/classes/models";
 
 /**
  * @class MoveGenerator
  * @classdesc Clase que representa un movimiento de la IA en el tablero.
  */
 export class MoveGenerator {
-
     /**
      * Retorna un movimiento de la IA.
-     * 
-     * @param {Board} board 
-     * @param {Difficulty} difficulty 
+     *
+     * @param {Board} board
+     * @param {Difficulty} difficulty
      * @returns {Movement} - Un arreglo con la fila, columna y letra del movimiento.
      */
-    public static getMovement(
-        board: Board,
-        difficulty: Difficulty
-    ): Movement {
+    public static getMovement(board: Board, difficulty: Difficulty): Movement {
         if (difficulty === Difficulty.MEDIUM) {
             return this.mediumMove(board);
         }
@@ -34,8 +28,8 @@ export class MoveGenerator {
     /**
      * Movimiento Facil
      * Genera un movimiento aleatorio.
-     * 
-     * @param {Board} board - El tablero del juego. 
+     *
+     * @param {Board} board - El tablero del juego.
      * @returns {Movement} - Un arreglo con la fila, columna y letra del movimiento.
      */
     public static easyMove(board: Board): Movement {
@@ -45,13 +39,13 @@ export class MoveGenerator {
             column = Math.floor(Math.random() * board.getColumns());
         } while (board.getCell(row, column) !== Letter.EMPTY);
         const letter = Math.random() < 0.5 ? Letter.S : Letter.O;
-        return {row, column, letter};
+        return { row, column, letter };
     }
 
     /**
      * Movimiento Medio
      * Genera un movimiento mas sofisticado.
-     * 
+     *
      * @param {Board} board - El tablero del juego.
      * @returns {Movement} - Un arreglo con la fila, columna y letra del movimiento.
      */
@@ -65,12 +59,16 @@ export class MoveGenerator {
                 for (let column = 0; column < columns; column++) {
                     if (board.getCell(row, column) === Letter.EMPTY) {
                         board.setCell(row, column, letter);
-                        const movement = { row, column, letter}; 
-                        const points = Checker.checkPlay(board, movement, GamePlayers.PLAYER_TWO).length;
+                        const movement = { row, column, letter };
+                        const points = Checker.checkPlay(
+                            board,
+                            movement,
+                            GamePlayers.PLAYER_TWO
+                        ).length;
                         board.setCell(row, column, Letter.EMPTY);
 
                         if (points >= 1) {
-                            return {row, column, letter};
+                            return { row, column, letter };
                         }
                     }
                 }
@@ -83,7 +81,7 @@ export class MoveGenerator {
     /**
      * Movimiento Dificil
      * Genera un movimiento mas sofisticado.
-     * 
+     *
      * @param {Board} board - El tablero del juego.
      * @returns {Movement} - Un arreglo con la fila, columna y letra del movimiento.
      */
@@ -100,13 +98,19 @@ export class MoveGenerator {
                 for (let column = 0; column < columns; column++) {
                     if (board.getCell(row, column) === Letter.EMPTY) {
                         board.setCell(row, column, pletter);
-                        const points = MoveGenerator.evaluateMove(board, pletter, row, column);
+                        const points = MoveGenerator.evaluateMove(
+                            board,
+                            pletter,
+                            row,
+                            column
+                        );
                         board.setCell(row, column, Letter.EMPTY);
 
                         if (points > maxPoints) {
                             maxPoints = points;
-                            const letter = Math.random() < 0.5 ? Letter.S : Letter.O;
-                            bestMove = {row, column, letter};
+                            const letter =
+                                Math.random() < 0.5 ? Letter.S : Letter.O;
+                            bestMove = { row, column, letter };
                         }
                     }
                 }
@@ -122,20 +126,33 @@ export class MoveGenerator {
 
     /**
      * Evalua un movimiento.
-     * 
+     *
      * @param {Board} board - El tablero del juego.
      * @param {Letter} letter - La letra del jugador.
      * @param {number} row - La fila del movimiento.
      * @param {number} column - La columna del movimiento.
      * @returns {number} - La evaluacion del movimiento.
      */
-    private static evaluateMove(board: Board, letter: Letter, row: number, column: number): number {
-        const playerMovement = { row, column, letter}; 
-        const playerPoints = Checker.checkPlay(board, playerMovement, GamePlayers.PLAYER_ONE).length;
+    private static evaluateMove(
+        board: Board,
+        letter: Letter,
+        row: number,
+        column: number
+    ): number {
+        const playerMovement = { row, column, letter };
+        const playerPoints = Checker.checkPlay(
+            board,
+            playerMovement,
+            GamePlayers.PLAYER_ONE
+        ).length;
         const opponentLetter = letter === Letter.S ? Letter.O : Letter.S;
-        const opponentMovement = { row, column, letter:opponentLetter}
+        const opponentMovement = { row, column, letter: opponentLetter };
         board.setCell(row, column, opponentLetter);
-        const opponentPoints =  Checker.checkPlay(board, opponentMovement, GamePlayers.PLAYER_TWO).length;
+        const opponentPoints = Checker.checkPlay(
+            board,
+            opponentMovement,
+            GamePlayers.PLAYER_TWO
+        ).length;
         return playerPoints - opponentPoints;
     }
 }

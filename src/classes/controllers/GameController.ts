@@ -1,13 +1,7 @@
-import { Letter } from "@/classes/enums/Letter";
-import { MoveGenerator } from "@/classes/utils/MoveGenerator";
-import { Player } from "@/classes/models/Player";
-import { Game } from "@/classes/models/Game";
-import { GameType } from "@/classes/enums/GameType";
-import { GameState } from "@/classes/enums/GameState";
-import { GameWinner } from "@/classes/enums/GameWinner";
-import { WinLine } from "@/classes/interfaces/WinLine";
-import { Record } from "@/classes/models/Record";
-import { Checker } from "../utils/Checker";
+import { GameState, GameType, GameWinner, Letter } from "@/classes/constants";
+import { Checker, MoveGenerator } from "@/classes/helpers";
+import { WinLine } from "@/classes/interfaces";
+import { Game, Player, Record } from "@/classes/models";
 
 /**
  * @class GameController
@@ -73,7 +67,7 @@ export class GameController {
 
     /**
      * Retorna los movimientos realizados del tablero.
-     * 
+     *
      * @returns {Record} Los movimientos realizados del tablero.
      */
     public getRecord(): Record {
@@ -82,11 +76,13 @@ export class GameController {
 
     /**
      * Retorna los scores de los jugadores.
-     * 
+     *
      * @returns {number[]} Los scores de los jugadores.
      */
     public getScores(): number[] {
-        return this.game.getPlayers().map((player) => player.getScore().getPoints());
+        return this.game
+            .getPlayers()
+            .map((player) => player.getScore().getPoints());
     }
 
     /**
@@ -100,7 +96,7 @@ export class GameController {
 
     /**
      * Agrega una línea de SOS completada durante el juego.
-     * 
+     *
      * @param {WinLine} line - La línea de SOS completada.
      */
     private addSOSLine(line: WinLine) {
@@ -151,12 +147,12 @@ export class GameController {
     /**
      * Realiza un movimiento de la Computadora en el tablero
      * y retorna la fila donde se realizó el movimiento.
-     * 
+     *
      * @return {number, number, Letter} el movimiento del bot.
      */
     public botMove(): [number, number, Letter] {
         const board = this.game.getBoard();
-        const {row, column, letter} = MoveGenerator.getMovement(
+        const { row, column, letter } = MoveGenerator.getMovement(
             board,
             this.game.getDifficulty()
         );
@@ -165,7 +161,7 @@ export class GameController {
 
     /**
      * Verifica si se ha completado una línea de SOS.
-     * 
+     *
      * @param {number} row - La fila donde se realizó el movimiento.
      * @param {number} column - La columna donde se realizó el movimiento.
      * @param {string} letter - La letra que se colocó en la posición especificada.
