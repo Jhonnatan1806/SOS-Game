@@ -51,10 +51,6 @@ export default function SettingGame() {
         gameContext?.setGameType(gameType);
         gameContext?.setGameMode(gameMode);
         gameContext?.setGameDifficulty(gameDifficulty);
-        if(gameType === GameType.GENERAL_GAME){
-            setModal(true);
-            return;
-        };
         router.push("/start");
     };
 

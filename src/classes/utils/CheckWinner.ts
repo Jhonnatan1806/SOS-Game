@@ -29,7 +29,7 @@ export class CheckWinner {
             return this.checkSimpleGame();
         } else if (this.gameType === GameType.GENERAL_GAME) {
             // TODO: Implementar
-            return -1;
+            return this.checkSimpleGame();
         }
         return 0;
     }

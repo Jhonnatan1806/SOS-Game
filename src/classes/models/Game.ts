@@ -3,7 +3,7 @@ import { Player } from "@/classes/models/Player";
 import { Difficulty } from "@/classes/enums/Difficulty";
 import { GameType } from "@/classes/enums/GameType";
 import { GameMode } from "@/classes/enums/GameMode";
-import { GamePlayer } from "@/classes/enums/GamePlayers";
+import { GamePlayers } from "@/classes/enums/GamePlayers";
 
 
 /**
@@ -32,12 +32,12 @@ export class Game {
 		this.board = new Board(size,size);
         this.gameType = type === "General" ? GameType.GENERAL_GAME : GameType.SIMPLE_GAME;
         if(mode === GameMode.PVC) {
-            this.players = [ new Player(GamePlayer.PLAYER_ONE), new Player(GamePlayer.PLAYER_TWO,true)];
+            this.players = [ new Player(GamePlayers.PLAYER_ONE), new Player(GamePlayers.PLAYER_TWO,true)];
         }else if(mode === GameMode.CVC){
-            this.players = [ new Player(GamePlayer.PLAYER_ONE,true), new Player(GamePlayer.PLAYER_TWO,true)];
+            this.players = [ new Player(GamePlayers.PLAYER_ONE,true), new Player(GamePlayers.PLAYER_TWO,true)];
         }
         else{
-            this.players = [ new Player(GamePlayer.PLAYER_ONE), new Player(GamePlayer.PLAYER_TWO)];
+            this.players = [ new Player(GamePlayers.PLAYER_ONE), new Player(GamePlayers.PLAYER_TWO)];
         }
         if(difficulty === "Intermedio"){
             this.difficulty = Difficulty.MEDIUM;

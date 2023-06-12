@@ -1,14 +1,14 @@
-import { Line } from "@/classes/interfaces/Line";
+import { GamePlayers } from "@/classes/enums/GamePlayers";
+import { WinLine } from "@/classes/interfaces/WinLine";
 
 interface Props {
-    listLine: Line[];
-    currentTurn: string;
+    listLine: WinLine[];
     gameSize: number;
 }
 
-export default function Lines({ listLine, currentTurn, gameSize }: Props) {
+export default function Lines({ listLine, gameSize }: Props) {
 
-    const angle = (line: Line) => {
+    const angle = (line: WinLine) => {
         const deltaY = line.endRow - line.startRow;
         const deltaX = line.endColumn - line.startColumn;
         const radians = Math.atan2(deltaY, deltaX);
@@ -19,7 +19,7 @@ export default function Lines({ listLine, currentTurn, gameSize }: Props) {
     return (
         <>
             {listLine.map((line, index) => {
-                const color = currentTurn === "ROJO" ? "bg-red-500" : "bg-blue-500";
+                const color = line.player === GamePlayers.PLAYER_ONE ? "bg-red-500" : "bg-blue-500";
                 const angleLine = angle(line);
                 const sizeBox = 340 / gameSize;
                 const widthLine =

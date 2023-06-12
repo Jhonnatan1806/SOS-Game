@@ -1,13 +1,13 @@
 import { Letter } from "@/classes/enums/Letter";
 import { MoveGenerator } from "@/classes/utils/MoveGenerator";
 import { Player } from "@/classes/models/Player";
-import { CheckWinner } from "@/classes/utils/CheckWinner";
 import { Game } from "@/classes/models/Game";
 import { GameType } from "@/classes/enums/GameType";
 import { GameState } from "@/classes/enums/GameState";
 import { GameWinner } from "@/classes/enums/GameWinner";
-import { Line } from "@/classes/interfaces/Line";
+import { WinLine } from "@/classes/interfaces/WinLine";
 import { Record } from "@/classes/models/Record";
+import { Checker } from "../utils/Checker";
 
 /**
  * @class GameController
@@ -18,7 +18,7 @@ export class GameController {
     private gameState: GameState;
     private gameWinner: GameWinner;
     private currentPlayerIndex: number;
-    private completedLines: Line[];
+    private completedLines: WinLine[];
     private record: Record;
 
     /**
@@ -128,23 +128,34 @@ export class GameController {
         return [row, col, letter];
     }
 
-    public checkSOS(row: number, column: number): boolean {
+    public checkSOS(row: number, column: number, letter: Letter): boolean {
         const board = this.game.getBoard();
         const mode = this.game.getGameMode();
-        const checkWinner = new CheckWinner(board, mode, row, column);
-        const points = checkWinner.checkBoard();
+        const movement = { row, column, letter };
+        const player = this.getCurrentPlayer().getName();
+        const winLines = Checker.checkPlay(board, movement, player);
+        const points = winLines.length;
         this.getCurrentPlayer().getScore().addPoints(points);
-        if (points > 0 && mode === GameType.SIMPLE_GAME) {
-            this.gameState = GameState.FINISHED;
-            const lines = checkWinner.getLines();
-            for (const line of lines) {
-                this.addSOSLine(line);
+        if (mode === GameType.SIMPLE_GAME) {
+            if (points > 0) {
+                this.gameState = GameState.FINISHED;
+                for (const line of winLines) {
+                    this.addSOSLine(line);
+                }
+                return true;
             }
-            return true;
+        } else if (mode === GameType.GENERAL_GAME) {
+            if (points > 0) {
+                for (const line of winLines) {
+                    this.addSOSLine(line);
+                }
+            }
+            if (board.isFull()) {
+                this.gameState = GameState.FINISHED;
+                return true;
+            }
         }
-        if (board.isFull()) {
-            this.gameState = GameState.FINISHED;
-        }
+
         return false;
     }
 
@@ -153,11 +164,11 @@ export class GameController {
      *
      * @returns {Line} La última línea de SOS completada o null si no hay ninguna.
      */
-    public getCompletedSOSLines(): Line[] {
+    public getCompletedSOSLines(): WinLine[] {
         return this.completedLines;
     }
 
-    private addSOSLine(line: Line) {
+    private addSOSLine(line: WinLine) {
         this.completedLines.push(line);
     }
 

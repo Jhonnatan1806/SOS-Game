@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 
 // core
 import Layout from "@/components/core/Layout";
-import Flex from "@/components/core/Flex";
 import Switch from "@/components/core/Switch";
 import Modal from "@/components/core/Modal";
 
@@ -28,11 +27,11 @@ import { GameState } from "@/classes/enums/GameState";
 import { GameWinner } from "@/classes/enums/GameWinner";
 import { GameMode } from "@/classes/enums/GameMode";
 import { Letter } from "@/classes/enums/Letter";
-import { Line } from "@/classes/interfaces/Line";
+import { WinLine } from "@/classes/interfaces/WinLine";
 import { Essentials } from "@/classes/interfaces/Essentials";
 import { Difficulty } from "@/classes/enums/Difficulty";
 import { GameType } from "@/classes/enums/GameType";
-import { GamePlayer } from "@/classes/enums/GamePlayers";
+import { GamePlayers } from "@/classes/enums/GamePlayers";
 import { Movement } from "@/classes/interfaces/Movement";
 import GameBoard from "@/components/custom/GameBoard";
 
@@ -43,7 +42,7 @@ export default function GamePlay() {
     const [gameController, setGameController] = useState<GameController>();
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [currentLetter, setCurrentLetter] = useState<Letter>(Letter.S);
-    const [completedLines, setCompletedLines] = useState<Line[]>([]);
+    const [completedLines, setCompletedLines] = useState<WinLine[]>([]);
     const [isUIDisabled, setIsUIDisabled] = useState<boolean>(false);
     const [isGameInProgress, setIsGameInProgress] = useState<boolean>(false);
 
@@ -56,8 +55,8 @@ export default function GamePlay() {
 
     const [grid, setGrid] = useState<string[][]>([[]]);
     const [winner, setWinner] = useState<GameWinner>(GameWinner.NONE);
-    const [currentTurn, setCurrentTurn] = useState<GamePlayer>(
-        GamePlayer.PLAYER_ONE
+    const [currentTurn, setCurrentTurn] = useState<GamePlayers>(
+        GamePlayers.PLAYER_ONE
     );
     const [scores, setScores] = useState<number[]>([0, 0]);
 
@@ -111,8 +110,8 @@ export default function GamePlay() {
 
     const executeMovement = (movement: Movement): void => {
         writeCell(movement.row, movement.column, movement.letter);
-        updateVariables();
         changeTurn();
+        updateVariables();
     };
 
     const handleLetterChange = (option: string): void => {
@@ -159,8 +158,8 @@ export default function GamePlay() {
         letter: Letter
     ): void => {
         writeCell(row, column, letter);
-        updateVariables();
         changeTurn();
+        updateVariables();
     };
 
     const handleComputerTurn = async (): Promise<void> => {
@@ -173,15 +172,15 @@ export default function GamePlay() {
 
         await delay(500);
         writeCellBot();
-        updateVariables();
         changeTurn();
+        updateVariables();
     };
 
     const writeCell = (row: number, column: number, letter: Letter): void => {
         if (!gameController || !gameController.makeMove(row, column, letter)) {
             return;
         }
-        check(row, column);
+        check(row, column, letter);
     };
 
     const writeCellBot = (): void => {
@@ -192,12 +191,12 @@ export default function GamePlay() {
         writeCell(row, col, letter);
     };
 
-    const check = (row: number, column: number): void => {
-        const checkSOS = gameController?.checkSOS(row, column);
-        if (checkSOS) {
-            const lines = gameController?.getCompletedSOSLines();
-            setCompletedLines(lines ?? []);
+    const check = (row: number, column: number, letter: Letter): void => {
+        if (!gameController) {
+            return;
         }
+        gameController.checkSOS(row, column, letter);
+        setCompletedLines(gameController.getCompletedSOSLines());
     };
 
     const isFinished = (): boolean => {
@@ -261,7 +260,6 @@ export default function GamePlay() {
                             <div className="absolute top-0 left-0">
                                 <Lines
                                     listLine={completedLines}
-                                    currentTurn={currentTurn}
                                     gameSize={essentials.gameSize}
                                 />
                             </div>
