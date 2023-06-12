@@ -2,8 +2,7 @@ import { Difficulty, GameMode, GamePlayers, GameType} from "@/classes/constants"
 import { Board, Player} from "@/classes/models";
 
 /**
- * @class Game
- * @classdesc Representa un juego de SOS.
+ * Representa un juego de SOS.
  */
 export class Game {
 	private board: Board;
@@ -14,11 +13,10 @@ export class Game {
 	/**
 	 * Crea un juego de SOS.
 	 *
-	 * @constructor
-     * @param {number} size - El tamaño del tablero.
-     * @param {string} type - El tipo de juego.
-     * @param {string} mode - El modo de juego.
-     * @param {string} difficulty - La dificultad del juego.
+     * @param size - El tamaño del tablero.
+     * @param type - El tipo de juego.
+     * @param mode - El modo de juego.
+     * @param difficulty - La dificultad del juego.
 	 */
 	constructor(
         size: number | undefined,
@@ -50,7 +48,7 @@ export class Game {
 	/**
 	 * Retorna el tablero del juego.
 	 *
-	 * @returns {Board} El objeto que representa el tablero del juego.
+	 * @returns El objeto que representa el tablero del juego.
 	 */
 	public getBoard(): Board {
 		return this.board;
@@ -59,7 +57,7 @@ export class Game {
 	/**
 	 * Retorna el modo del juego.
 	 *
-	 * @returns {Mode} El modo del juego.
+	 * @returns El modo del juego.
 	 */
 	public getGameMode(): GameType {
 		return this.gameType;
@@ -68,7 +66,7 @@ export class Game {
 	/**
 	 * Retorna los jugadores del juego.
      * 
-	 * @returns {Player[]} Un arreglo con los jugadores del juego.
+	 * @returns Un arreglo con los jugadores del juego.
 	 */
 	public getPlayers(): Player[] {
 		return this.players;
@@ -77,7 +75,7 @@ export class Game {
     /**
      * Retorna la dificultad del juego.
      * 
-     * @returns {Difficulty} La dificultad del juego.
+     * @returns La dificultad del juego.
      */
     public getDifficulty(): Difficulty {
         return this.difficulty;

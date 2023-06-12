@@ -1,7 +1,5 @@
 /**
- * @class Essentials
- * @classdesc Representa los datos esenciales del juego.
- * @interface
+ * Representa los datos esenciales del juego.
  */
 export interface Essentials {
     gameSize: number;

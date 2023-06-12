@@ -1,9 +1,7 @@
 import { GamePlayers } from "@/classes/constants";
 
 /**
- * @class WinLine
- * @classdesc Representa una línea ganadora del juego.
- * @interface
+ * Representa una línea ganadora del juego.
  */
 export interface WinLine {
     startRow: number;

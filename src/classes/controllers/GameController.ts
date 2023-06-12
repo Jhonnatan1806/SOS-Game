@@ -4,8 +4,7 @@ import { WinLine } from "@/classes/interfaces";
 import { Game, Player, Record } from "@/classes/models";
 
 /**
- * @class GameController
- * @classdesc Controla el juego de SOS.
+ * Controla el juego de SOS.
  */
 export class GameController {
     private game: Game;
@@ -17,9 +16,7 @@ export class GameController {
 
     /**
      * Crea un juego de SOS.
-     *
-     * @constructor
-     * @param {Game} game - El juego.
+     * @param game - El juego.
      */
     constructor(game: Game) {
         this.game = game;
@@ -33,7 +30,7 @@ export class GameController {
     /**
      * Retorna el juego.
      *
-     * @returns {Game} El juego.
+     * @returns El juego.
      */
     public getGame(): Game {
         return this.game;
@@ -42,7 +39,7 @@ export class GameController {
     /**
      * Retorna el jugador actual.
      *
-     * @returns {Player} El jugador actual.
+     * @returns El jugador actual.
      */
     public getCurrentPlayer(): Player {
         return this.game.getPlayers()[this.currentPlayerIndex];
@@ -59,7 +56,7 @@ export class GameController {
     /**
      * Retorna `true` si el juego ha terminado.
      *
-     * @returns {GameState} `true` si el juego ha terminado, `false` en caso contrario.
+     * @returns `true` si el juego ha terminado, `false` en caso contrario.
      */
     public getGameState(): GameState {
         return this.gameState;
@@ -68,7 +65,7 @@ export class GameController {
     /**
      * Retorna los movimientos realizados del tablero.
      *
-     * @returns {Record} Los movimientos realizados del tablero.
+     * @returns Los movimientos realizados del tablero.
      */
     public getRecord(): Record {
         return this.record;
@@ -77,7 +74,7 @@ export class GameController {
     /**
      * Retorna los scores de los jugadores.
      *
-     * @returns {number[]} Los scores de los jugadores.
+     * @returns Los scores de los jugadores.
      */
     public getScores(): number[] {
         return this.game
@@ -88,7 +85,7 @@ export class GameController {
     /**
      * Retorna la última línea de SOS completada durante el juego.
      *
-     * @returns {Line} La última línea de SOS completada o null si no hay ninguna.
+     * @returns La última línea de SOS completada o null si no hay ninguna.
      */
     public getCompletedSOSLines(): WinLine[] {
         return this.completedLines;
@@ -97,7 +94,7 @@ export class GameController {
     /**
      * Agrega una línea de SOS completada durante el juego.
      *
-     * @param {WinLine} line - La línea de SOS completada.
+     * @param line - La línea de SOS completada.
      */
     private addSOSLine(line: WinLine) {
         this.completedLines.push(line);
@@ -106,7 +103,7 @@ export class GameController {
     /**
      * Retorna el jugador ganador del juego.
      *
-     * @returns {Player} El jugador ganador.
+     * @returns El jugador ganador.
      */
     public getWinner(): GameWinner {
         const scorePlayer1 = this.game.getPlayers()[0].getScore().getPoints();
@@ -126,10 +123,10 @@ export class GameController {
     /**
      * Realiza un movimiento en el tablero.
      *
-     * @param {number} row - La fila donde se realizará el movimiento.
-     * @param {number} column - La columna donde se realizará el movimiento.
-     * @param {string} letter - La letra que se colocará en la posición especificada.
-     * @returns {boolean} `true` si el movimiento se realizó con éxito, `false` en caso contrario.
+     * @param row - La fila donde se realizará el movimiento.
+     * @param column - La columna donde se realizará el movimiento.
+     * @param letter - La letra que se colocará en la posición especificada.
+     * @returns `true` si el movimiento se realizó con éxito, `false` en caso contrario.
      */
     public makeMove(row: number, column: number, letter: Letter): boolean {
         const board = this.game.getBoard();
@@ -148,7 +145,7 @@ export class GameController {
      * Realiza un movimiento de la Computadora en el tablero
      * y retorna la fila donde se realizó el movimiento.
      *
-     * @return {number, number, Letter} el movimiento del bot.
+     * @return El movimiento del bot.
      */
     public botMove(): [number, number, Letter] {
         const board = this.game.getBoard();
@@ -162,10 +159,10 @@ export class GameController {
     /**
      * Verifica si se ha completado una línea de SOS.
      *
-     * @param {number} row - La fila donde se realizó el movimiento.
-     * @param {number} column - La columna donde se realizó el movimiento.
-     * @param {string} letter - La letra que se colocó en la posición especificada.
-     * @returns {boolean} `true` si se completó una línea de SOS, `false` en caso contrario.
+     * @param row - La fila donde se realizó el movimiento.
+     * @param column - La columna donde se realizó el movimiento.
+     * @param letter - La letra que se colocó en la posición especificada.
+     * @returns `true` si se completó una línea de SOS, `false` en caso contrario.
      */
     public checkSOS(row: number, column: number, letter: Letter): boolean {
         const board = this.game.getBoard();

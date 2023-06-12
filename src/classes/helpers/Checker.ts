@@ -3,17 +3,16 @@ import { Movement, WinLine } from "@/classes/interfaces";
 import { Board } from "@/classes/models";
 
 /**
- * @class Checker
- * @classdesc Representa un verificador de jugadas.
+ * Representa un verificador de jugadas.
  */
 export class Checker {
     /**
      * Verifica si un movimiento es válido.
      *
-     * @param {Board} board - El tablero.
-     * @param {Movement} movement - El movimiento.
-     * @param {GamePlayers}player - El jugador.
-     * @returns {WinLine[]} La línea ganadora.
+     * @param board - El tablero.
+     * @param movement - El movimiento.
+     * @param player - El jugador.
+     * @returns La línea ganadora.
      */
     static checkPlay(
         board: Board,
@@ -33,10 +32,10 @@ export class Checker {
     /**
      * Verifica si un movimiento es una O.
      *
-     * @param {Board} board - El tablero.
-     * @param {Movement} movement - El movimiento.
-     * @param {GamePlayers}player - El jugador.
-     * @returns {WinLine[]} La línea ganadora.
+     * @param board - El tablero.
+     * @param movement - El movimiento.
+     * @param player - El jugador.
+     * @returns La línea ganadora.
      */
     static checkO(
         board: Board,
@@ -135,10 +134,10 @@ export class Checker {
     /**
      * Verifica si un movimiento es una S.
      *
-     * @param {Board} board - El tablero.
-     * @param {Movement} movement - El movimiento.
-     * @param {GamePlayers}player - El jugador.
-     * @returns {WinLine[]} La línea ganadora.
+     * @param board - El tablero.
+     * @param movement - El movimiento.
+     * @param player - El jugador.
+     * @returns La línea ganadora.
      */
     static checkS(
         board: Board,

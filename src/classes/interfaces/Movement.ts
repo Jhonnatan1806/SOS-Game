@@ -1,9 +1,7 @@
 import { Letter } from "@/classes/constants";
 
 /**
- * @class Movement
- * @classdesc Representa un movimiento en el tablero.
- * @interface
+ * Representa un movimiento en el tablero.
  */
 export interface Movement{
     row: number;

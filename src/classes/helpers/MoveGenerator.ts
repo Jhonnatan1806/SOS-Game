@@ -4,16 +4,15 @@ import { Movement } from "@/classes/interfaces";
 import { Board } from "@/classes/models";
 
 /**
- * @class MoveGenerator
- * @classdesc Clase que representa un movimiento de la IA en el tablero.
+ * Clase que representa un movimiento de la IA en el tablero.
  */
 export class MoveGenerator {
     /**
      * Retorna un movimiento de la IA.
      *
-     * @param {Board} board
-     * @param {Difficulty} difficulty
-     * @returns {Movement} - Un arreglo con la fila, columna y letra del movimiento.
+     * @param board - El tablero del juego.
+     * @param difficulty - La dificultad del juego.
+     * @returns - Un arreglo con la fila, columna y letra del movimiento.
      */
     public static getMovement(board: Board, difficulty: Difficulty): Movement {
         if (difficulty === Difficulty.MEDIUM) {
@@ -29,8 +28,8 @@ export class MoveGenerator {
      * Movimiento Facil
      * Genera un movimiento aleatorio.
      *
-     * @param {Board} board - El tablero del juego.
-     * @returns {Movement} - Un arreglo con la fila, columna y letra del movimiento.
+     * @param board - El tablero del juego.
+     * @returns Un arreglo con la fila, columna y letra del movimiento.
      */
     public static easyMove(board: Board): Movement {
         let row: number, column: number;
@@ -46,8 +45,8 @@ export class MoveGenerator {
      * Movimiento Medio
      * Genera un movimiento mas sofisticado.
      *
-     * @param {Board} board - El tablero del juego.
-     * @returns {Movement} - Un arreglo con la fila, columna y letra del movimiento.
+     * @param board - El tablero del juego.
+     * @returns Un arreglo con la fila, columna y letra del movimiento.
      */
     public static mediumMove(board: Board): Movement {
         const rows = board.getRows();
@@ -82,8 +81,8 @@ export class MoveGenerator {
      * Movimiento Dificil
      * Genera un movimiento mas sofisticado.
      *
-     * @param {Board} board - El tablero del juego.
-     * @returns {Movement} - Un arreglo con la fila, columna y letra del movimiento.
+     * @param board - El tablero del juego.
+     * @returns Un arreglo con la fila, columna y letra del movimiento.
      */
     public static hardMove(board: Board): Movement {
         const rows = board.getRows();
@@ -127,11 +126,11 @@ export class MoveGenerator {
     /**
      * Evalua un movimiento.
      *
-     * @param {Board} board - El tablero del juego.
-     * @param {Letter} letter - La letra del jugador.
-     * @param {number} row - La fila del movimiento.
-     * @param {number} column - La columna del movimiento.
-     * @returns {number} - La evaluacion del movimiento.
+     * @param board - El tablero del juego.
+     * @param letter - La letra del jugador.
+     * @param row - La fila del movimiento.
+     * @param column - La columna del movimiento.
+     * @returns La evaluacion del movimiento.
      */
     private static evaluateMove(
         board: Board,
