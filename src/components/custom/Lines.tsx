@@ -1,5 +1,5 @@
-import { GamePlayers } from "@/classes/constants/GamePlayers";
-import { WinLine } from "@/classes/interfaces/WinLine";
+import { GamePlayers } from "@/classes/constants";
+import { WinLine } from "@/classes/interfaces";
 
 interface Props {
     listLine: WinLine[];

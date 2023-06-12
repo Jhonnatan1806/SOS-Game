@@ -1,5 +1,5 @@
-import { Letter } from "@/classes/constants/Letter";
 import React from "react";
+import { Letter } from "@/classes/constants";
 
 interface GameBoardProps {
     grid: string[][];

@@ -1,5 +1,5 @@
-import { GamePlayers } from "@/classes/constants/GamePlayers";
 import React from "react";
+import { GamePlayers } from "@/classes/constants";
 
 interface TurnIndicatorProps {
     currentTurn: string;
