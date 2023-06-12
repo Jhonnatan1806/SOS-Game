@@ -45,10 +45,6 @@ export class GameController {
         return this.game;
     }
 
-    public getSize(): number {
-        return this.game.getBoard().getRows();
-    }
-
     /**
      * Retorna el jugador actual.
      *
@@ -76,10 +72,45 @@ export class GameController {
     }
 
     /**
+     * Retorna los movimientos realizados del tablero.
+     * 
+     * @returns {Record} Los movimientos realizados del tablero.
+     */
+    public getRecord(): Record {
+        return this.record;
+    }
+
+    /**
+     * Retorna los scores de los jugadores.
+     * 
+     * @returns {number[]} Los scores de los jugadores.
+     */
+    public getScores(): number[] {
+        return this.game.getPlayers().map((player) => player.getScore().getPoints());
+    }
+
+    /**
+     * Retorna la última línea de SOS completada durante el juego.
+     *
+     * @returns {Line} La última línea de SOS completada o null si no hay ninguna.
+     */
+    public getCompletedSOSLines(): WinLine[] {
+        return this.completedLines;
+    }
+
+    /**
+     * Agrega una línea de SOS completada durante el juego.
+     * 
+     * @param {WinLine} line - La línea de SOS completada.
+     */
+    private addSOSLine(line: WinLine) {
+        this.completedLines.push(line);
+    }
+
+    /**
      * Retorna el jugador ganador del juego.
      *
      * @returns {Player} El jugador ganador.
-     * @throws Error si hay empate.
      */
     public getWinner(): GameWinner {
         const scorePlayer1 = this.game.getPlayers()[0].getScore().getPoints();
@@ -102,6 +133,7 @@ export class GameController {
      * @param {number} row - La fila donde se realizará el movimiento.
      * @param {number} column - La columna donde se realizará el movimiento.
      * @param {string} letter - La letra que se colocará en la posición especificada.
+     * @returns {boolean} `true` si el movimiento se realizó con éxito, `false` en caso contrario.
      */
     public makeMove(row: number, column: number, letter: Letter): boolean {
         const board = this.game.getBoard();
@@ -117,7 +149,10 @@ export class GameController {
     }
 
     /**
-     * Realiza un movimiento de la Computadora en el tablero.
+     * Realiza un movimiento de la Computadora en el tablero
+     * y retorna la fila donde se realizó el movimiento.
+     * 
+     * @return {number, number, Letter} el movimiento del bot.
      */
     public botMove(): [number, number, Letter] {
         const board = this.game.getBoard();
@@ -128,6 +163,14 @@ export class GameController {
         return [row, col, letter];
     }
 
+    /**
+     * Verifica si se ha completado una línea de SOS.
+     * 
+     * @param {number} row - La fila donde se realizó el movimiento.
+     * @param {number} column - La columna donde se realizó el movimiento.
+     * @param {string} letter - La letra que se colocó en la posición especificada.
+     * @returns {boolean} `true` si se completó una línea de SOS, `false` en caso contrario.
+     */
     public checkSOS(row: number, column: number, letter: Letter): boolean {
         const board = this.game.getBoard();
         const mode = this.game.getGameMode();
@@ -155,23 +198,12 @@ export class GameController {
                 return true;
             }
         }
-
         return false;
     }
 
     /**
-     * Retorna la última línea de SOS completada durante el juego.
-     *
-     * @returns {Line} La última línea de SOS completada o null si no hay ninguna.
+     * Reinicia el juego.
      */
-    public getCompletedSOSLines(): WinLine[] {
-        return this.completedLines;
-    }
-
-    private addSOSLine(line: WinLine) {
-        this.completedLines.push(line);
-    }
-
     public resetGame(): void {
         this.game.getBoard().reset();
         this.game.getPlayers()[0].getScore().reset();
@@ -181,13 +213,5 @@ export class GameController {
         this.gameWinner = GameWinner.NONE;
         this.currentPlayerIndex = 0;
         this.completedLines = [];
-    }
-
-    public getRecord(): Record {
-        return this.record;
-    }
-
-    public getScores(): number[] {
-        return this.game.getPlayers().map((player) => player.getScore().getPoints());
     }
 }

@@ -86,8 +86,4 @@ export class Game {
         return this.difficulty;
     }
 
-    public getSize(): number {
-        return this.size;
-    }
-
 }

@@ -1,11 +1,11 @@
 import { Letter } from "@/classes/enums/Letter";
 import { Board } from "@/classes/models/Board";
 import { Difficulty } from "@/classes/enums/Difficulty";
-import { CheckWinner } from "@/classes/utils/CheckWinner";
-import { GameType } from "@/classes/enums/GameType";
+import { Checker } from "@/classes/utils/Checker";
+import { GamePlayers } from "@/classes/enums/GamePlayers";
 
 /**
- * @class IMoveGenerator
+ * @class MoveGenerator
  * @classdesc Clase que representa un movimiento de la IA en el tablero.
  */
 export class MoveGenerator {
@@ -39,15 +39,15 @@ export class MoveGenerator {
 
         for (const letter of playerLetters) {
             for (let row = 0; row < rows; row++) {
-                for (let col = 0; col < columns; col++) {
-                    if (board.getCell(row, col) === Letter.EMPTY) {
-                        board.setCell(row, col, letter);
-                        const checkWinner = new CheckWinner(board, GameType.SIMPLE_GAME, row, col);
-                        const points = checkWinner.checkBoard();
-                        board.setCell(row, col, Letter.EMPTY);
+                for (let column = 0; column < columns; column++) {
+                    if (board.getCell(row, column) === Letter.EMPTY) {
+                        board.setCell(row, column, letter);
+                        const movement = { row, column, letter}; 
+                        const points = Checker.checkPlay(board, movement, GamePlayers.PLAYER_TWO).length;
+                        board.setCell(row, column, Letter.EMPTY);
 
                         if (points >= 1) {
-                            return [row, col, letter];
+                            return [row, column, letter];
                         }
                     }
                 }
@@ -67,15 +67,16 @@ export class MoveGenerator {
 
         for (const letter of playerLetters) {
             for (let row = 0; row < rows; row++) {
-                for (let col = 0; col < columns; col++) {
-                    if (board.getCell(row, col) === Letter.EMPTY) {
-                        board.setCell(row, col, letter);
-                        const points = MoveGenerator.evaluateMove(board, letter, row, col);
-                        board.setCell(row, col, Letter.EMPTY);
+                for (let column = 0; column < columns; column++) {
+                    if (board.getCell(row, column) === Letter.EMPTY) {
+                        board.setCell(row, column, letter);
+                        const points = MoveGenerator.evaluateMove(board, letter, row, column);
+                        board.setCell(row, column, Letter.EMPTY);
 
                         if (points > maxPoints) {
                             maxPoints = points;
-                            bestMove = [row, col, letter];
+                            const letterRandom = Math.random() < 0.5 ? Letter.S : Letter.O;
+                            bestMove = [row, column, letterRandom];
                         }
                     }
                 }
@@ -89,23 +90,13 @@ export class MoveGenerator {
         return MoveGenerator.easyMove(board);
     }
 
-    // Evalúa la puntuación de un movimiento para un jugador dado
-    private static evaluateMove(board: Board, letter: Letter, row: number, col: number): number {
-        const gameType = MoveGenerator.determineGameType(board);
-        const checkWinner = new CheckWinner(board, gameType, row, col);
-        const playerPoints = checkWinner.checkBoard();
+    private static evaluateMove(board: Board, letter: Letter, row: number, column: number): number {
+        const playerMovement = { row, column, letter}; 
+        const playerPoints = Checker.checkPlay(board, playerMovement, GamePlayers.PLAYER_ONE).length;
         const opponentLetter = letter === Letter.S ? Letter.O : Letter.S;
-        board.setCell(row, col, opponentLetter);
-        const opponentPoints = checkWinner.checkBoard();
-
-        // Devuelve la diferencia de puntos entre el jugador actual y el oponente
+        const opponentMovement = { row, column, letter:opponentLetter}
+        board.setCell(row, column, opponentLetter);
+        const opponentPoints =  Checker.checkPlay(board, opponentMovement, GamePlayers.PLAYER_TWO).length;
         return playerPoints - opponentPoints;
-    }
-
-    // Determina el tipo de juego basado en el tamaño del tablero
-    private static determineGameType(board: Board): GameType {
-        const rows = board.getRows();
-        const columns = board.getColumns();
-        return GameType.SIMPLE_GAME;
     }
 }
