@@ -1,7 +1,8 @@
 /**
- * @class Mode
+ * @class GameType
  * @classdesc Representa el modo de juego del tablero.
  * @readonly
+ * @enum {string}
  */
 export enum GameType {
 	/**

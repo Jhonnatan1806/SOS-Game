@@ -2,6 +2,7 @@
  * @class GameMode
  * @classdesc Representa el modo de juego del tablero.
  * @readonly
+ * @enum {string}
  */
 export enum Letter {
 	/**

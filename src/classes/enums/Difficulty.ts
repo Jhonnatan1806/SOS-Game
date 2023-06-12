@@ -2,14 +2,14 @@
  * @class Difficulty
  * @classdesc Representa la dificultad de un jugador IA.
  * @readonly
- * @enum {number}
+ * @enum {string}
  */
 export enum Difficulty {
 	/**
-	 * Dificultad fácil
+	 * Dificultad facil
 	 * @type {string}
 	 */
-	EASY="Facil",
+	EASY="F\u00E1cil",
 
 	/**
 	 * Dificultad media
@@ -21,5 +21,5 @@ export enum Difficulty {
 	 * Dificultad difícil
 	 * @type {string}
 	 */
-	HARD="Dificil",
+	HARD="Dif\u00EDcil",
 }
