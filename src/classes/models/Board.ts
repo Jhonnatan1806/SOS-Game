@@ -71,9 +71,9 @@ export class Board {
 	/**
 	 * Establece el valor de una celda del tablero.
      * 
-	 * @param {number} row Posición de la fila.
-	 * @param {number} column Posición de la columna.
-	 * @param {Letter} value Valor a asignar.
+	 * @param {number} row - Posición de la fila.
+	 * @param {number} column - Posición de la columna.
+	 * @param {Letter} value - Valor a asignar.
 	 */
 	public setCell(row: number, column: number, value: string): void {
 		this.grid[row][column] = value;
@@ -82,30 +82,23 @@ export class Board {
 	/**
 	 * Obtiene el valor de una celda del tablero.
      * 
-	 * @param {number} row Posición de la fila.
-	 * @param {number} column Posición de la columna.
-	 * @returns {string} Valor de la celda.
+	 * @param {number} row - Posición de la fila.
+	 * @param {number} column - Posición de la columna.
+	 * @returns {string} - Valor de la celda.
 	 */
 	public getCell(row: number, column: number): string {
 		return this.grid[row][column];
 	}
 
+    /**
+     * Limpia el tablero.
+     */
     public reset(): void {
         for (let row = 0; row < this.rows; row++) {
             for (let column = 0; column < this.columns; column++) {
                 this.setCell(row, column, "");
             }
         }
-    }
-
-    public clone(): Board {
-        const cloneBoard = new Board(this.rows, this.columns);
-        for (let row = 0; row < this.rows; row++) {
-            for (let column = 0; column < this.columns; column++) {
-                cloneBoard.setCell(row, column, this.getCell(row, column));
-            }
-        }
-        return cloneBoard;
     }
 
 }

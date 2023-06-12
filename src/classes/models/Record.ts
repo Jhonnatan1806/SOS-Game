@@ -1,29 +1,47 @@
 import { Movement } from "@/classes/interfaces/Movement";
 import { Letter } from "@/classes/enums/Letter";
 
+/**
+ * @class Record
+ * @classdesc Representa un registro de movimientos.
+ */
 export class Record {
 
     private movements: Movement[];
 
+    /**
+     * Crea una instancia de la clase Record.
+     * 
+     * @constructor
+     */
     constructor() {
         this.movements = [];
     }
 
-    getMovements() {
+    /**
+     * Obtiene los movimientos del registro.
+     * 
+     * @returns {Movement[]} - Los movimientos del registro.
+     */
+    public getMovements() : Movement[] {
         return this.movements;
     }
 
-    getClone() {
-        const clone = new Record();
-        clone.movements = this.movements.slice();
-        return clone;
-    }
-
-    addMovement(row:number, column:number, letter:Letter) {
+    /**
+     * Agrega un movimiento al registro.
+     * 
+     * @param {number} row - La fila del movimiento.
+     * @param {number} column - La columna del movimiento.
+     * @param {Letter} letter - La letra del movimiento.
+     */ 
+    public addMovement(row:number, column:number, letter:Letter): void {
         this.movements.push({row, column, letter});
     }
 
-    reset() {
+    /**
+     * Reinicia el registro.
+     */
+    public reset(): void {
         this.movements = [];
     }
 }

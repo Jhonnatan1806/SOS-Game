@@ -5,7 +5,6 @@ import { GameType } from "@/classes/enums/GameType";
 import { GameMode } from "@/classes/enums/GameMode";
 import { GamePlayers } from "@/classes/enums/GamePlayers";
 
-
 /**
  * @class Game
  * @classdesc Representa un juego de SOS.
@@ -15,12 +14,15 @@ export class Game {
     private players: Player[];
     private difficulty: Difficulty;
 	private gameType: GameType;
-    private size: number;
 
 	/**
 	 * Crea un juego de SOS.
 	 *
 	 * @constructor
+     * @param {number} size - El tamaño del tablero.
+     * @param {string} type - El tipo de juego.
+     * @param {string} mode - El modo de juego.
+     * @param {string} difficulty - La dificultad del juego.
 	 */
 	constructor(
         size: number | undefined,
@@ -28,7 +30,6 @@ export class Game {
         mode: string | undefined,
         difficulty: string | undefined,
 	) {
-        this.size = size || 3;
 		this.board = new Board(size,size);
         this.gameType = type === "General" ? GameType.GENERAL_GAME : GameType.SIMPLE_GAME;
         if(mode === GameMode.PVC) {
