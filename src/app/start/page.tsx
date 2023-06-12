@@ -1,39 +1,19 @@
 "use client";
-import React, { useState, useEffect, use } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
-// core
-import Layout from "@/components/core/Layout";
-import Switch from "@/components/core/Switch";
-import Modal from "@/components/core/Modal";
-
-// custom
-import Lines from "@/components/custom/Lines";
-import TurnIndicator from "@/components/custom/TurnIndicator";
-import ReplayButton from "@/components/custom/ReplayButton";
-import Scoreboard from "@/components/custom/Scoreboard";
-import ModalWinner from "@/components/custom/ModalWinner";
-import GameControls from "@/components/custom/GameControls";
-import GameBoard from "@/components/custom/GameBoard";
-
-// context
 import { useGameContext } from "@/utils/useContextGame";
 
-// controllers and classes
-import { GameController } from "@/classes/controllers/GameController";
-import { Game } from "@/classes/models/Game";
+// componentes core
+import { Layout, Modal, Switch} from "@/components/core";
 
-// enums and interfaces
-import { GameState } from "@/classes/constants/GameState";
-import { GameWinner } from "@/classes/constants/GameWinner";
-import { GameMode } from "@/classes/constants/GameMode";
-import { Letter } from "@/classes/constants/Letter";
-import { Difficulty } from "@/classes/constants/Difficulty";
-import { GameType } from "@/classes/constants/GameType";
-import { GamePlayers } from "@/classes/constants/GamePlayers";
-import { WinLine } from "@/classes/interfaces/WinLine";
-import { Essentials } from "@/classes/interfaces/Essentials";
-import { Movement } from "@/classes/interfaces/Movement";
+// componentes custom
+import { Lines, TurnIndicator, ReplayButton, Scoreboard, ModalWinner, GameControls, GameBoard } from "@/components/custom";
+
+// logica
+import { Difficulty, GameMode, GamePlayers, GameState, GameType, GameWinner, Letter } from "@/classes/constants";
+import { Essentials, Movement, WinLine } from "@/classes/interfaces";
+import { GameController } from "@/classes/controllers";
+import { Game } from "@/classes/models";
 
 export default function GamePlay() {
     const gameContext = useGameContext();
