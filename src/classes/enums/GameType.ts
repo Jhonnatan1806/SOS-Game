@@ -1,6 +1,6 @@
 /**
  * @class GameType
- * @classdesc Representa el modo de juego del tablero.
+ * @classdesc Representa el tipo de juego.
  * @readonly
  * @enum {string}
  */
