@@ -1,5 +1,3 @@
-import { GamePlayers } from "@/classes/constants";
-
 /**
  * @class GameWinner
  * @classdesc Representa el ganador del juego.
@@ -12,14 +10,14 @@ export enum GameWinner {
      * 
      * @type {string}
      */
-    WINNER_PLAYER1 = GamePlayers.PLAYER_ONE,
+    WINNER_PLAYER1 = "ROJO",
 
     /**
      * Ganador del juego BLUE
      * 
      * @type {string}
      */
-    WINNER_PLAYER2 = GamePlayers.PLAYER_TWO,
+    WINNER_PLAYER2 = "AZUL",
 
     /**
      * Empate
