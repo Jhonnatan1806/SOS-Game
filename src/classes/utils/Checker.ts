@@ -4,8 +4,20 @@ import { WinLine } from "@/classes/interfaces/WinLine";
 import { Letter } from "@/classes/enums/Letter";
 import { GamePlayers } from "@/classes/enums/GamePlayers";
 
+/**
+ * @class Checker
+ * @classdesc Representa un verificador de jugadas.
+ */
 export class Checker {
 
+    /**
+     * Verifica si un movimiento es válido.
+     * 
+     * @param {Board} board - El tablero.
+     * @param {Movement} movement - El movimiento.
+     * @param {GamePlayers}player - El jugador. 
+     * @returns {WinLine[]} La línea ganadora.
+     */
     static checkPlay(board: Board, movement: Movement, player: GamePlayers): WinLine[] {
         if(movement.letter === Letter.O){
             return this.checkO(board, movement, player);
@@ -17,6 +29,14 @@ export class Checker {
         return [];        
     }
 
+    /**
+     * Verifica si un movimiento es una O.
+     * 
+     * @param {Board} board - El tablero.
+     * @param {Movement} movement - El movimiento.
+     * @param {GamePlayers}player - El jugador. 
+     * @returns {WinLine[]} La línea ganadora.
+     */
     static checkO(board: Board, movement: Movement, player: GamePlayers): WinLine[] {
         const winLines: WinLine[] = [];
 
@@ -58,6 +78,14 @@ export class Checker {
         return winLines;
     }
 
+    /**
+     * Verifica si un movimiento es una S.
+     * 
+     * @param {Board} board - El tablero.
+     * @param {Movement} movement - El movimiento.
+     * @param {GamePlayers}player - El jugador.
+     * @returns {WinLine[]} La línea ganadora.
+     */
     static checkS(board: Board, movement: Movement, player: GamePlayers): WinLine[] {
         const winLines: WinLine[] = [];
 

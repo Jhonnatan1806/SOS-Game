@@ -156,11 +156,11 @@ export class GameController {
      */
     public botMove(): [number, number, Letter] {
         const board = this.game.getBoard();
-        const [row, col, letter] = MoveGenerator.getMovement(
+        const {row, column, letter} = MoveGenerator.getMovement(
             board,
             this.game.getDifficulty()
         );
-        return [row, col, letter];
+        return [row, column, letter];
     }
 
     /**

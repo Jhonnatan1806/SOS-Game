@@ -14,6 +14,7 @@ import ReplayButton from "@/components/custom/ReplayButton";
 import Scoreboard from "@/components/custom/Scoreboard";
 import ModalWinner from "@/components/custom/ModalWinner";
 import GameControls from "@/components/custom/GameControls";
+import GameBoard from "@/components/custom/GameBoard";
 
 // context
 import { useGameContext } from "@/utils/useContextGame";
@@ -27,13 +28,12 @@ import { GameState } from "@/classes/enums/GameState";
 import { GameWinner } from "@/classes/enums/GameWinner";
 import { GameMode } from "@/classes/enums/GameMode";
 import { Letter } from "@/classes/enums/Letter";
-import { WinLine } from "@/classes/interfaces/WinLine";
-import { Essentials } from "@/classes/interfaces/Essentials";
 import { Difficulty } from "@/classes/enums/Difficulty";
 import { GameType } from "@/classes/enums/GameType";
 import { GamePlayers } from "@/classes/enums/GamePlayers";
+import { WinLine } from "@/classes/interfaces/WinLine";
+import { Essentials } from "@/classes/interfaces/Essentials";
 import { Movement } from "@/classes/interfaces/Movement";
-import GameBoard from "@/components/custom/GameBoard";
 
 export default function GamePlay() {
     const gameContext = useGameContext();
