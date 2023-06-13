@@ -6,16 +6,15 @@ Fecha: **14/06/2023**
 
 ## 1. Demostración
 
-| n | Features| Estado |
-|-|-|-|
-| 1 | Se graba un juego simple completo de dos jugadores humanos. | :white_check_mark: |
-| 2 | Se graba un juego general completo de dos jugadores humanos. | :white_check_mark: |
-| 3 | Se graba un juego simple completo de jugadores humano-computadora. | :white_check_mark: |
-| 4 | Se graba un juego general completo de jugadores humano-computadora. | :white_check_mark: |
-| 5 | Se graba un juego simple completo de jugadores computadora-computadora. | :white_check_mark: |
-| 6 | Se graba un juego general completo de jugadores computadora-computadora. | :white_check_mark: |
-| 7 | Se graba el uso de la función Record/Replay | :white_check_mark: |
-
+| n   | Features                                                                 | Estado             |
+| --- | ------------------------------------------------------------------------ | ------------------ |
+| 1   | Se graba un juego simple completo de dos jugadores humanos.              | :white_check_mark: |
+| 2   | Se graba un juego general completo de dos jugadores humanos.             | :white_check_mark: |
+| 3   | Se graba un juego simple completo de jugadores humano-computadora.       | :white_check_mark: |
+| 4   | Se graba un juego general completo de jugadores humano-computadora.      | :white_check_mark: |
+| 5   | Se graba un juego simple completo de jugadores computadora-computadora.  | :white_check_mark: |
+| 6   | Se graba un juego general completo de jugadores computadora-computadora. | :white_check_mark: |
+| 7   | Se graba el uso de la función Record/Replay                              | :white_check_mark: |
 
 ## 2. Historias de usuario
 
@@ -44,103 +43,125 @@ Clase revisada: **GameController.ts**
 
 Fecha/hora de duración del ejercicio de revisión del código: **12/06/2023 10:00 - 12:00**
 
-| Checklist | Items Checklist | Conclusiones |
-|-----------|----------------|--------------|
-| Estandares de condificación | Convenciones de nombres |  |
-| ^ | Convención de ordenación de argumentos de método |  |
-| ^ | Comentarios significativos y válidos. |  |
-| ^ | Estilo consistente de bloques de código |  |
-| ^ | Indentación consistente |  |
-| Principio de diseño | Clase o método no bien modularizado |  |
-| ^ | Visibilidad adecuada de cada variable, método y clase. |  |
-| ^ | Clase o método con pobre abstracción |  |
-| ^ | Diseño por contrato (pre/postcondiciones) |  |
-| ^ | Violación del Principio Abierto-Cerrado |  |
-| ^ | Violación del Principio de Responsabilidad Única |  |
-| Smells código | Números mágicos |  |
-| ^ | Variable global /clase innecesaria |  |
-| ^ | Código duplicado |  |
-| ^ | Métodos largos |  |
-| ^ | Larga lista de parámetros |  |
-| ^ | Expresión demasiado compleja |  |
-| ^ | Switch o if-then-else que necesita ser reemplazado con polimorfismo |  |
-| ^ | Nombre de método o variable cuya intención no está clara |  |
-| ^ | ¿Algún método similar en otras clases? |  |
-| Errores | Fragmento de código con errores | **¿Cuál es el error?** **¿Por qué es un error?** |
-| ^ | Fragmento de código que no compila | **¿Cuál es el error?** **¿Por qué es un error?** |
-
+| Checklist                   | Items Checklist                                                     | Conclusiones                                     |
+| --------------------------- | ------------------------------------------------------------------- | ------------------------------------------------ |
+| Estandares de condificación | Convenciones de nombres                                             |                                                  |
+| ^                           | Convención de ordenación de argumentos de método                    |                                                  |
+| ^                           | Comentarios significativos y válidos.                               |                                                  |
+| ^                           | Estilo consistente de bloques de código                             |                                                  |
+| ^                           | Indentación consistente                                             |                                                  |
+| Principio de diseño         | Clase o método no bien modularizado                                 |                                                  |
+| ^                           | Visibilidad adecuada de cada variable, método y clase.              |                                                  |
+| ^                           | Clase o método con pobre abstracción                                |                                                  |
+| ^                           | Diseño por contrato (pre/postcondiciones)                           |                                                  |
+| ^                           | Violación del Principio Abierto-Cerrado                             |                                                  |
+| ^                           | Violación del Principio de Responsabilidad Única                    |                                                  |
+| Smells código               | Números mágicos                                                     |                                                  |
+| ^                           | Variable global /clase innecesaria                                  |                                                  |
+| ^                           | Código duplicado                                                    |                                                  |
+| ^                           | Métodos largos                                                      |                                                  |
+| ^                           | Larga lista de parámetros                                           |                                                  |
+| ^                           | Expresión demasiado compleja                                        |                                                  |
+| ^                           | Switch o if-then-else que necesita ser reemplazado con polimorfismo |                                                  |
+| ^                           | Nombre de método o variable cuya intención no está clara            |                                                  |
+| ^                           | ¿Algún método similar en otras clases?                              |                                                  |
+| Errores                     | Fragmento de código con errores                                     | **¿Cuál es el error?** **¿Por qué es un error?** |
+| ^                           | Fragmento de código que no compila                                  | **¿Cuál es el error?** **¿Por qué es un error?** |
 
 Clase revisada: **MoveGenerator.ts**
 
 Fecha/hora de duración del ejercicio de revisión del código: **14/06/2023 16:00 - 18:00**
 
-| Checklist | Items Checklist | Conclusiones |
-|-|-|-|
-| Estandares de condificación | Convenciones de nombres |  |
-| ^ | Convención de ordenación de argumentos de método |  |
-| ^ | Comentarios significativos y válidos. |  |
-| ^ | Estilo consistente de bloques de código |  |
-| ^ | Indentación consistente |  |
-| Principio de diseño | Clase o método no bien modularizado |  |
-| ^ | Visibilidad adecuada de cada variable, método y clase. |  |
-| ^ | Clase o método con pobre abstracción |  |
-| ^ | Diseño por contrato (pre/postcondiciones) |  |
-| ^ | Violación del Principio Abierto-Cerrado |  |
-| ^ | Violación del Principio de Responsabilidad Única |  |
-| Smells código | Números mágicos |  |
-| ^ | Variable global /clase innecesaria |  |
-| ^ | Código duplicado |  |
-| ^ | Métodos largos |  |
-| ^ | Larga lista de parámetros |  |
-| ^ | Expresión demasiado compleja |  |
-| ^ | Switch o if-then-else que necesita ser reemplazado con polimorfismo |  |
-| ^ | Nombre de método o variable cuya intención no está clara |  |
-| ^ | ¿Algún método similar en otras clases? |  |
-| Errores | Fragmento de código con errores | **¿Cuál es el error?** **¿Por qué es un error?** |
-| ^ | Fragmento de código que no compila | **¿Cuál es el error?** **¿Por qué es un error?** |
+| Checklist                   | Items Checklist                                                     | Conclusiones                                     |
+| --------------------------- | ------------------------------------------------------------------- | ------------------------------------------------ |
+| Estandares de condificación | Convenciones de nombres                                             |                                                  |
+| ^                           | Convención de ordenación de argumentos de método                    |                                                  |
+| ^                           | Comentarios significativos y válidos.                               |                                                  |
+| ^                           | Estilo consistente de bloques de código                             |                                                  |
+| ^                           | Indentación consistente                                             |                                                  |
+| Principio de diseño         | Clase o método no bien modularizado                                 |                                                  |
+| ^                           | Visibilidad adecuada de cada variable, método y clase.              |                                                  |
+| ^                           | Clase o método con pobre abstracción                                |                                                  |
+| ^                           | Diseño por contrato (pre/postcondiciones)                           |                                                  |
+| ^                           | Violación del Principio Abierto-Cerrado                             |                                                  |
+| ^                           | Violación del Principio de Responsabilidad Única                    |                                                  |
+| Smells código               | Números mágicos                                                     |                                                  |
+| ^                           | Variable global /clase innecesaria                                  |                                                  |
+| ^                           | Código duplicado                                                    |                                                  |
+| ^                           | Métodos largos                                                      |                                                  |
+| ^                           | Larga lista de parámetros                                           |                                                  |
+| ^                           | Expresión demasiado compleja                                        |                                                  |
+| ^                           | Switch o if-then-else que necesita ser reemplazado con polimorfismo |                                                  |
+| ^                           | Nombre de método o variable cuya intención no está clara            |                                                  |
+| ^                           | ¿Algún método similar en otras clases?                              |                                                  |
+| Errores                     | Fragmento de código con errores                                     | **¿Cuál es el error?** **¿Por qué es un error?** |
+| ^                           | Fragmento de código que no compila                                  | **¿Cuál es el error?** **¿Por qué es un error?** |
 
+<table>
+    <tr>
+        <th rowspan="5">Checklist</th>
+        <td>Convenciones de nombres</td>
+        <td>Conclusiones</td>
+    </tr>
+    <tr>
+        <td>Estandares de condificación</td>
+        <td>Convención de ordenación de argumentos de método</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Comentarios significativos y válidos.</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th rowspan="6">Principio de diseño</th>
+        <td>Clase o método no bien modularizado</td>
+        <td></td>
+    </tr>
+<!-- Resto de las filas -->
+</table>
 
 ## 4. Resumen de todo el código
 
-| Tipo | Nombre del archivo de código fuente | Código de producción o prueba? | # lineas de código |
-|-|-|-|-|
-| Controllers | GameController.ts | Producción | 208 |
-| Models | Board.ts | Producción | 103 |
-| ^ | Game.ts | Producción | 77 |
-| ^ | Player.ts | Producción | 50 |
-| ^ | Record.ts | Producción | 44 |
-| ^ | Score.ts | Producción | 49 |
-| Helpers | Checker.ts | Producción | 299 |
-| ^ | MoveGeneretor.ts | Producción | 171 |
-| Interfaces | Essentials.ts | Producción | 27 |
-| ^ | MakeMove.ts | Producción | 15 |
-| ^ | Movement.ts | Producción | 22 |
-| ^ | WinLine.ts | Producción | 32 |
-| Constants | Difficulty.ts | Producción | 21 |
-| ^ | GameMode.ts | Producción | 21 |
-| ^ | GamePlayers.ts | Producción | 16 |
-| ^ | GameState.ts | Producción | 16 |
-| ^ | GameType.ts | Producción | 16 |
-| ^ | GameWinner.ts | Producción | 26 |
-| ^ | Letter.ts | Producción | 21 |
-| Utils | useContextGame.tsx | Producción | 45 |
-| Pages | Home.tsx | Producción | 40 |
-| ^ | Setting.tsx | Producción | 137 |
-| ^ | Game.tsx | Producción | 291 |
-| Components | GameBoard.tsx | Producción | 56 |
-| ^ | GameControls.tsx | Producción | 33 |
-| ^ | Lines.tsx | Producción | 57 |
-| ^ | ModalWinner.tsx | Producción | 33 |
-| ^ | ReplayButton.tsx | Producción | 21 |
-| ^ | ScoreBoard.tsx | Producción | 20 |
-| ^ | TurnIndicator.tsx | Producción | 22 |
-| \_\_Test\_\_ | ComputerPlayingGame.test.ts | Test | 141 |
-| ^ | GeneralGameFinished.test.ts | Test | 90 |
-| ^ | GeneralGameWrite.test.ts | Test | 28 |
-| ^ | PreGame.test.ts | Test | 34 |
-| ^ | RecordGame.test.ts | Test | 31 |
-| ^ | SimpleGameFinished.test.ts | Test | 66 |
-| ^ | SimpleGameWrite.test.ts | Test | 28 |
+| Tipo         | Nombre del archivo de código fuente | Código de producción o prueba? | # lineas de código |
+| ------------ | ----------------------------------- | ------------------------------ | ------------------ |
+| Controllers  | GameController.ts                   | Producción                     | 208                |
+| Models       | Board.ts                            | Producción                     | 103                |
+| ^            | Game.ts                             | Producción                     | 77                 |
+| ^            | Player.ts                           | Producción                     | 50                 |
+| ^            | Record.ts                           | Producción                     | 44                 |
+| ^            | Score.ts                            | Producción                     | 49                 |
+| Helpers      | Checker.ts                          | Producción                     | 299                |
+| ^            | MoveGeneretor.ts                    | Producción                     | 171                |
+| Interfaces   | Essentials.ts                       | Producción                     | 27                 |
+| ^            | MakeMove.ts                         | Producción                     | 15                 |
+| ^            | Movement.ts                         | Producción                     | 22                 |
+| ^            | WinLine.ts                          | Producción                     | 32                 |
+| Constants    | Difficulty.ts                       | Producción                     | 21                 |
+| ^            | GameMode.ts                         | Producción                     | 21                 |
+| ^            | GamePlayers.ts                      | Producción                     | 16                 |
+| ^            | GameState.ts                        | Producción                     | 16                 |
+| ^            | GameType.ts                         | Producción                     | 16                 |
+| ^            | GameWinner.ts                       | Producción                     | 26                 |
+| ^            | Letter.ts                           | Producción                     | 21                 |
+| Utils        | useContextGame.tsx                  | Producción                     | 45                 |
+| Pages        | Home.tsx                            | Producción                     | 40                 |
+| ^            | Setting.tsx                         | Producción                     | 137                |
+| ^            | Game.tsx                            | Producción                     | 291                |
+| Components   | GameBoard.tsx                       | Producción                     | 56                 |
+| ^            | GameControls.tsx                    | Producción                     | 33                 |
+| ^            | Lines.tsx                           | Producción                     | 57                 |
+| ^            | ModalWinner.tsx                     | Producción                     | 33                 |
+| ^            | ReplayButton.tsx                    | Producción                     | 21                 |
+| ^            | ScoreBoard.tsx                      | Producción                     | 20                 |
+| ^            | TurnIndicator.tsx                   | Producción                     | 22                 |
+| \_\_Test\_\_ | ComputerPlayingGame.test.ts         | Test                           | 141                |
+| ^            | GeneralGameFinished.test.ts         | Test                           | 90                 |
+| ^            | GeneralGameWrite.test.ts            | Test                           | 28                 |
+| ^            | PreGame.test.ts                     | Test                           | 34                 |
+| ^            | RecordGame.test.ts                  | Test                           | 31                 |
+| ^            | SimpleGameFinished.test.ts          | Test                           | 66                 |
+| ^            | SimpleGameWrite.test.ts             | Test                           | 28                 |
 
 Total de lineas de código: **2407**
 
