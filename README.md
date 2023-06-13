@@ -5,9 +5,9 @@ Este proyecto ah sido realizado como proyecto de el curso de desarrolo de softwa
 Se ah tomado como referencia las guias de [Kapumota](https://github.com/kapumota) para la realizacion de este proyecto.
 Ademas se ah tomado en cuenta el estilo de [Google](https://google.github.io/styleguide/tsguide.html) para la realizacion de este proyecto.
 
-![Inicio del juego](https://github.com/jhonnatan1806/SOSGame/public/images/home.png)
+![Inicio del juego](https://raw.githubusercontent.com/Jhonnatan1806/SOSGame/main/public/images/home.png)
 
-![Juego](https://github.com/jhonnatan1806/SOSGame/public/images/gameplay.png)
+![Juego](https://raw.githubusercontent.com/Jhonnatan1806/SOSGame/main/public/images/gameplay.png)
 
 ## Acerca del proyecto
 
