@@ -1,9 +1,7 @@
 # SOS Game
 
-Similar al Tic Tac Toe, SOS Game es un juego sencillo en el cual los jugadores deben completar la palabra `SOS` para ganar.
-Este proyecto ah sido realizado como proyecto de el curso de desarrolo de software en la UNI.
-Se ah tomado como referencia las guias de [Kapumota](https://github.com/kapumota) para la realizacion de este proyecto.
-Ademas se ah tomado en cuenta el estilo de [Google](https://google.github.io/styleguide/tsguide.html) para la realizacion de este proyecto.
+El juego SOS Game es una variante simple y entretenida del clásico Tic Tac Toe. Consiste en formar la palabra "SOS" en un tablero mediante la colocación estratégica de letras. Este proyecto fue desarrollado como parte de un curso de desarrollo de software. 
+Para su realización, se utilizaron las pautas proporcionadas por [Kapumota](https://github.com/kapumota) como referencia, y se tuvo en cuenta el estilo de diseño de [Google](https://google.github.io/styleguide/tsguide.html).
 
 ![Inicio del juego](https://raw.githubusercontent.com/Jhonnatan1806/SOSGame/main/public/images/home.png)
 
