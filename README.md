@@ -1,6 +1,6 @@
 # SOS Game
 
-SOS Game es un juego similar al Tic Tac Toe, en el cual los jugadores deben completar la palabra `SOS` para ganar.
+Similar al Tic Tac Toe, SOS Game es un juego sencillo en el cual los jugadores deben completar la palabra `SOS` para ganar.
 Este proyecto ah sido realizado como proyecto de el curso de desarrolo de software en la UNI.
 Se ah tomado como referencia las guias de [Kapumota](https://github.com/kapumota) para la realizacion de este proyecto.
 Ademas se ah tomado en cuenta el estilo de [Google](https://google.github.io/styleguide/tsguide.html) para la realizacion de este proyecto.
@@ -11,9 +11,9 @@ Ademas se ah tomado en cuenta el estilo de [Google](https://google.github.io/sty
 
 ## Acerca del proyecto
 
-El proyecto ah sido realizado utilizando [React](https://legacy.reactjs.org/docs/getting-started.html)
-con [Nextjs 13](https://nextjs.org/docs/getting-started/installation) para el desarrollo de la aplicacion web,
-Ademas se ah utilizado [Typescript](https://www.typescriptlang.org/docs/) para el tipado de datos, 
+El proyecto ah sido realizado utilizando la tecnologia [React](https://legacy.reactjs.org/docs/getting-started.html)
+con el framework [Nextjs 13](https://nextjs.org/docs/getting-started/installation) para el desarrollo de la aplicacion,
+ademas se ah utilizado [Typescript](https://www.typescriptlang.org/docs/) para el tipado de datos, 
 [Jest](https://jestjs.io/docs/getting-started) para la realizacion de pruebas unitarias,
 [TSDoc](https://tsdoc.org/pages/packages/tsdoc/) de microsoft para la documentacion de codigo,
 [Eslint](https://eslint.org/)  para el control de errores y 
