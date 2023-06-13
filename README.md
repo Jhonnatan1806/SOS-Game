@@ -9,6 +9,8 @@ Ademas se ah tomado en cuenta el estilo de [Google](https://google.github.io/sty
 
 ![Juego](https://raw.githubusercontent.com/Jhonnatan1806/SOSGame/main/public/images/gameplay.png)
 
+Puedes probar el juego desde aqui [SOS Game](https://sosgame.vercel.app/)
+
 ## Acerca del proyecto
 
 El proyecto ah sido realizado utilizando la tecnologia [React](https://legacy.reactjs.org/docs/getting-started.html)
@@ -18,6 +20,7 @@ ademas se ah utilizado [Typescript](https://www.typescriptlang.org/docs/) para e
 [TSDoc](https://tsdoc.org/pages/packages/tsdoc/) de microsoft para la documentacion de codigo,
 [Eslint](https://eslint.org/)  para el control de errores y 
 [Prettier](https://prettier.io/docs/en/index.html)  para el formateo de codigo.
+
 
 Este proyecto se encuentra desplegado en [Vercel](https://vercel.com/).
 
@@ -33,5 +36,10 @@ Existen 3 modos de juegos:
 - **Jugador vs Jugador**: El juego se desarrolla entre 2 jugadores.
 - **Jugador vs CPU**: El juego se desarrolla entre el jugador y la computadora.
 - **CPU vs CPU**: El juego se desarrolla entre 2 computadoras.
+
+## Documentación
+
+La documentacion del proyecto se encuentra en la carpeta `docs` en la raiz del proyecto. 
+puedes acceder a la documentacion desde aqui [Documentación SOS Game](https://github.com)
 
 
