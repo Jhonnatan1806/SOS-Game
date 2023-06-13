@@ -1,8 +1,10 @@
 {
     "$schema": "https://typedoc.org/schema.json",
     "entryPoints": ["./src/**/*.ts"],
-    "out": "doc",
+    "out": "docs",
     "compilerOptions": {
         "strictNullChecks": false
-    }
+    },
+    "plugin": ["@mxssfd/typedoc-theme"],
+    "theme": "my-theme"
 }

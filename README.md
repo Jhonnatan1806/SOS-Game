@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SOS Game
 
-## Getting Started
+SOS Game es un juego similar al Tic Tac Toe, en el cual los jugadores deben completar la palabra `SOS` para ganar.
+Este proyecto ah sido realizado como proyecto de el curso de desarrolo de software en la UNI.
+Se ah tomado como referencia las guias de [Kapumota](https://github.com/kapumota) para la realizacion de este proyecto.
+Ademas se ah tomado en cuenta el estilo de [Google](https://google.github.io/styleguide/tsguide.html) para la realizacion de este proyecto.
 
-First, run the development server:
+![Inicio del juego](https://github.com/jhonnatan1806/SOSGame/public/images/home.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+![Juego](https://github.com/jhonnatan1806/SOSGame/public/images/gameplay.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Acerca del proyecto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+El proyecto ah sido realizado utilizando [React](https://legacy.reactjs.org/docs/getting-started.html)
+con [Nextjs 13](https://nextjs.org/docs/getting-started/installation) para el desarrollo de la aplicacion web,
+Ademas se ah utilizado [Typescript](https://www.typescriptlang.org/docs/) para el tipado de datos, 
+[Jest](https://jestjs.io/docs/getting-started) para la realizacion de pruebas unitarias,
+[TSDoc](https://tsdoc.org/pages/packages/tsdoc/) de microsoft para la documentacion de codigo,
+[Eslint](https://eslint.org/)  para el control de errores y 
+[Prettier](https://prettier.io/docs/en/index.html)  para el formateo de codigo.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Este proyecto se encuentra desplegado en [Vercel](https://vercel.com/).
 
-## Learn More
+## Reglas del juego
 
-To learn more about Next.js, take a look at the following resources:
+El juego cuenta con 2 tipos de juego:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Modo Clasico**: El primer jugador en completar la palabra `SOS` gana.
+- **Modo General**: El jugador con mas puntos al finalizar el juego gana.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Existen 3 modos de juegos:
 
-## Deploy on Vercel
+- **Jugador vs Jugador**: El juego se desarrolla entre 2 jugadores.
+- **Jugador vs CPU**: El juego se desarrolla entre el jugador y la computadora.
+- **CPU vs CPU**: El juego se desarrolla entre 2 computadoras.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
