@@ -40,6 +40,40 @@ Then: El sistema muestra los movimientos de la partida.
 
 ## 3. Revisión de código
 
+Clase revisada: **GameController.ts**
+
+Fecha/hora de duración del ejercicio de revisión del código: **12/06/2023 10:00 - 12:00**
+
+| Checklist | Items Checklist | Conclusiones |
+|-----------|----------------|--------------|
+| Estandares de condificación | Convenciones de nombres |  |
+| ^ | Convención de ordenación de argumentos de método |  |
+| ^ | Comentarios significativos y válidos. |  |
+| ^ | Estilo consistente de bloques de código |  |
+| ^ | Indentación consistente |  |
+| Principio de diseño | Clase o método no bien modularizado |  |
+| ^ | Visibilidad adecuada de cada variable, método y clase. |  |
+| ^ | Clase o método con pobre abstracción |  |
+| ^ | Diseño por contrato (pre/postcondiciones) |  |
+| ^ | Violación del Principio Abierto-Cerrado |  |
+| ^ | Violación del Principio de Responsabilidad Única |  |
+| Smells código | Números mágicos |  |
+| ^ | Variable global /clase innecesaria |  |
+| ^ | Código duplicado |  |
+| ^ | Métodos largos |  |
+| ^ | Larga lista de parámetros |  |
+| ^ | Expresión demasiado compleja |  |
+| ^ | Switch o if-then-else que necesita ser reemplazado con polimorfismo |  |
+| ^ | Nombre de método o variable cuya intención no está clara |  |
+| ^ | ¿Algún método similar en otras clases? |  |
+| Errores | Fragmento de código con errores | **¿Cuál es el error?** **¿Por qué es un error?** |
+| ^ | Fragmento de código que no compila | **¿Cuál es el error?** **¿Por qué es un error?** |
+
+
+Clase revisada: **MoveGenerator.ts**
+
+Fecha/hora de duración del ejercicio de revisión del código: **14/06/2023 16:00 - 18:00**
+
 | Checklist | Items Checklist | Conclusiones |
 |-|-|-|
 | Estandares de condificación | Convenciones de nombres |  |
@@ -64,6 +98,7 @@ Then: El sistema muestra los movimientos de la partida.
 | ^ | ¿Algún método similar en otras clases? |  |
 | Errores | Fragmento de código con errores | **¿Cuál es el error?** **¿Por qué es un error?** |
 | ^ | Fragmento de código que no compila | **¿Cuál es el error?** **¿Por qué es un error?** |
+
 
 ## 4. Resumen de todo el código
 
@@ -113,8 +148,14 @@ Total de lineas de código: **2407**
 
 ## ¿Qué ganaste personalmente con el proyecto?
 
-Personalmente, me agrado hacer el proyecto, considero que es un juego muy interesante y que me ayudo a aprender mucho sobre el desarrollo de aplicaciones web. Respecto a la codificación tuve varios problemas con la lógica, pero gracias a las pruebas unitarias pude darme cuenta a tiempo, así evité pasar largas horas en búsqueda de errores, lo que acelero mi proceso de desarrollo, respecto al diseño pude aprovechar en gran medida el uso de componentes y el uso de hooks, lo que me ayudo a tener un código más limpio y fácil de entender. Tuve que refactorizar el código a lo largo de todos los sprints porque siempre surgía alguna función nueva o conocimiento nuevo que cambiaba mi perspectiva de como hacer el código, por ejemplo el uso de Stubs me pareció muy interesante, ya que los movimientos de la computadora eran aleatorios por lo tanto, me vi en la obligación de querer implementarlo en el código lo que ocasiono que refactorize en gran medida gameController y MoveGenerator cambiando la lógica así de mi aplicación. Considero que me ha dado una perspectiva más amplia de lo que implica el desarrollo.
+Desde mi perspectiva personal, disfruté mucho trabajando en este proyecto. Considero que el juego en sí es extremadamente interesante y me proporcionó una gran cantidad de aprendizaje en el ámbito del desarrollo de software. En cuanto a la codificación, me encontré con varios desafíos de logica, pero gracias a las pruebas unitarias pude identificar y solucionarlos a tiempo, evitando así perder largas horas en la búsqueda de errores. Esto aceleró significativamente mi proceso de desarrollo. En lo que respecta al diseño, pude aprovechar al máximo el uso de componentes y ganchos (hooks), lo que resultó en un código más limpio y fácil de comprender.
+
+A lo largo de los sprints, tuve que refactorizar el código en varias ocasiones, ya que constantemente surgían nuevas funciones o conocimientos que modificaban mi perspectiva sobre cómo abordar la programación. Por ejemplo, me pareció sumamente interesante el uso de Stubs, dado que los movimientos de la computadora debían ser aleatorios. Por lo tanto, sentí la necesidad de implementar esta lógica en mi código, lo que me llevó a realizar cambios significativos en el gameController y el MoveGenerator de mi aplicación.
 
 ## ¿Qué hace bien tu proyecto y qué podría hacer mejor tu proyecto?
 
-En realidad considero que la aplicación cumple con los criterios y funciona, aunque no está libre de errores, sin embargo, el código tiene mucho por mejorar, considero que mi abstracción de código no es lo suficientemente buena para considerarlo como un código limpio, el uso de tailwind CSS dentro de las páginas sin usar componentes personalizados tampoco me agrada demasiado, ya que hace más complicado poder leer y entender la lógica de mi aplicación, algo muy importante que me gustaría mejorar también es que aunque uso el framework Next.js no estoy aprovechando al máximo el uso de esta tecnología, teniendo la posibilidad de hacer llamadas al backend usando getServerSideProps, decidí agregar la mayoría de la lógica renderizándola desde el cliente cosa que términos de rendimiento no me parece correcta, debido al tiempo y a mi escaso dominio de esta tecnología creo que no pude sacarle el máximo provecho en el proyecto, sin embargo creo que adquirí nuevos conocimientos que me servirán para seguir mejorando en el desarrollo de aplicaciones.
+En mi opinión, considero que la aplicación cumple con los criterios establecidos y funciona correctamente, aunque reconozco que aún contiene algunos errores. No obstante, siento que el código tiene margen de mejora considerable. No logré alcanzar una nivel de abstracción de código muy bueno, lo que me impide considerarlo como un código limpio. Además, el uso de tailwind CSS directamente en las páginas, sin hacer uso de componentes personalizados, tampoco me agrada del todo, ya que dificulta la lectura y comprensión de la lógica de la aplicación.
+
+Un aspecto que me gustaría mejorar es aprovechar al máximo las capacidades de Next.js, dado que, aunque utilicé el framework, no logré utilizar en su totalidad características como getServerSideProps para realizar llamadas al backend. En lugar de eso, opté por renderizar la mayor parte de la lógica desde el cliente, lo cual desde mi punto de vista puede afectar el rendimiento. Debido a limitaciones de tiempo y a mi nivel de experiencia en el desarrollo, siento que no pude aprovechar al máximo las funcionalidades de Next.js en este proyecto.
+
+Sin embargo, considero que adquirí nuevos conocimientos valiosos que me ayudarán a seguir mejorando en el desarrollo de aplicaciones. Aunque reconozco las áreas de mejora en este proyecto, estoy emocionado por seguir aprendiendo y aplicando estas lecciones en futuros desarrollos.
