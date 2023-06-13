@@ -7,7 +7,6 @@ interface Props {
 }
 
 export default function Lines({ listLine, gameSize }: Props) {
-
     const angle = (line: WinLine) => {
         const deltaY = line.endRow - line.startRow;
         const deltaX = line.endColumn - line.startColumn;
@@ -19,7 +18,10 @@ export default function Lines({ listLine, gameSize }: Props) {
     return (
         <>
             {listLine.map((line, index) => {
-                const color = line.player === GamePlayers.PLAYER_ONE ? "bg-red-500" : "bg-blue-500";
+                const color =
+                    line.player === GamePlayers.PLAYER_ONE
+                        ? "bg-red-500"
+                        : "bg-blue-500";
                 const angleLine = angle(line);
                 const sizeBox = 340 / gameSize;
                 const widthLine =
@@ -34,7 +36,9 @@ export default function Lines({ listLine, gameSize }: Props) {
                     height: `${heightLine}px`,
                     transform: `rotate(${angleLine}deg)`,
                     transformOrigin: "0% 0%",
-                    top: `${line.startRow * sizeBox + sizeBox / 2 + topOffset}px`,
+                    top: `${
+                        line.startRow * sizeBox + sizeBox / 2 + topOffset
+                    }px`,
                     left: `${
                         line.startColumn * sizeBox + sizeBox / 2 + leftOffset
                     }px`,
@@ -44,13 +48,9 @@ export default function Lines({ listLine, gameSize }: Props) {
                     <div
                         key={index}
                         className={`absolute ${color}`}
-                        style={styleLine}>
-                    </div>
+                        style={styleLine}></div>
                 );
-            }
-            )}
+            })}
         </>
     );
-
 }
-

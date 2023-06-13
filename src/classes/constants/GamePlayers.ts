@@ -7,7 +7,7 @@ export enum GamePlayers {
      * Jugador uno
      */
     PLAYER_ONE = "ROJO",
-    
+
     /**
      * Jugador dos
      */

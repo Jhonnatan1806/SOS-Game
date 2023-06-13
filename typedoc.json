@@ -5,6 +5,4 @@
     "compilerOptions": {
         "strictNullChecks": false
     },
-    "plugin": ["@mxssfd/typedoc-theme"],
-    "theme": "my-theme"
 }

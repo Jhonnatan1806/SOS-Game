@@ -25,7 +25,5 @@ describe("Record Game", (): void => {
         expect(movements[0].letter).toBe(Letter.S);
         expect(movements[1].letter).toBe(Letter.O);
         expect(movements.length).toBe(2);
-
     });
 });
-

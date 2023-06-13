@@ -12,7 +12,7 @@ export enum GameMode {
      * Juego jugador vs computadora
      */
     PVC = "J vs CPU",
-    
+
     /**
      * Juego computadora vs computadora
      */

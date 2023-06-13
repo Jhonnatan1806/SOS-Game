@@ -3,18 +3,18 @@
  * @readonly
  */
 export enum Letter {
-	/**
-	 * Letra S
-	 */
-	S = "S",
+    /**
+     * Letra S
+     */
+    S = "S",
 
-	/**
-	 * Letra O
-	 */
-	O = "O",
+    /**
+     * Letra O
+     */
+    O = "O",
 
-	/**
-	 * Celda vacía
-	 */
-	EMPTY = "",
+    /**
+     * Celda vacía
+     */
+    EMPTY = "",
 }

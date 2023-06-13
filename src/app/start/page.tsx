@@ -2,15 +2,25 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useGameContext } from "@/utils/useContextGame";
-
-// componentes core
-import { Layout, Modal, Switch} from "@/components/core";
-
-// componentes custom
-import { Lines, TurnIndicator, ReplayButton, Scoreboard, ModalWinner, GameControls, GameBoard } from "@/components/custom";
-
-// logica
-import { Difficulty, GameMode, GamePlayers, GameState, GameType, GameWinner, Letter } from "@/classes/constants";
+import { Layout, Modal, Switch } from "@/components/core";
+import {
+    Lines,
+    TurnIndicator,
+    ReplayButton,
+    Scoreboard,
+    ModalWinner,
+    GameControls,
+    GameBoard,
+} from "@/components/custom";
+import {
+    Difficulty,
+    GameMode,
+    GamePlayers,
+    GameState,
+    GameType,
+    GameWinner,
+    Letter,
+} from "@/classes/constants";
 import { Essentials, Movement, WinLine } from "@/classes/interfaces";
 import { GameController } from "@/classes/controllers";
 import { Game } from "@/classes/models";
@@ -90,7 +100,11 @@ export default function GamePlay() {
     };
 
     const executeMovement = (movement: Movement): void => {
-        const isValidMove: boolean = writeCell(movement.row, movement.column, movement.letter);
+        const isValidMove: boolean = writeCell(
+            movement.row,
+            movement.column,
+            movement.letter
+        );
         if (isValidMove) {
             changeTurn();
         }
@@ -141,7 +155,7 @@ export default function GamePlay() {
         letter: Letter
     ): void => {
         const isValidMove: boolean = writeCell(row, column, letter);
-        if (isValidMove){
+        if (isValidMove) {
             changeTurn();
         }
         updateVariables();
@@ -157,13 +171,17 @@ export default function GamePlay() {
 
         await delay(500);
         const isValidMove: boolean = writeCellBot();
-        if (isValidMove){
+        if (isValidMove) {
             changeTurn();
         }
         updateVariables();
     };
 
-    const writeCell = (row: number, column: number, letter: Letter): boolean => {
+    const writeCell = (
+        row: number,
+        column: number,
+        letter: Letter
+    ): boolean => {
         if (!gameController || !gameController.makeMove(row, column, letter)) {
             return false;
         }
@@ -176,7 +194,7 @@ export default function GamePlay() {
             return false;
         }
         const board = gameController.getGame().getBoard();
-        const generator = new MoveGenerator(board,essentials.gameDifficulty);
+        const generator = new MoveGenerator(board, essentials.gameDifficulty);
         const [row, col, letter] = gameController.botMove(generator);
         return writeCell(row, col, letter);
     };

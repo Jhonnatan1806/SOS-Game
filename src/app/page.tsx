@@ -1,5 +1,12 @@
 import React from "react";
-import { Button, ButtonExternal, Layout, Title, Flex, Text } from "@/components/core";
+import {
+    Button,
+    ButtonExternal,
+    Layout,
+    Title,
+    Flex,
+    Text,
+} from "@/components/core";
 import { FaHeart } from "react-icons/fa";
 
 export default function Home() {

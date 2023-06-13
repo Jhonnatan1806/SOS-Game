@@ -7,7 +7,11 @@ interface GameControlsProps {
     onHome: () => void;
 }
 
-export default function GameControls({ onSettings, onReset, onHome }: GameControlsProps) {
+export default function GameControls({
+    onSettings,
+    onReset,
+    onHome,
+}: GameControlsProps) {
     return (
         <div className="flex flex-row justify-between text-3xl">
             <button className="flex justify-start gap-2" onClick={onSettings}>
