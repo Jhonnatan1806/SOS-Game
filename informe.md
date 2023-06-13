@@ -75,11 +75,11 @@ Fecha/hora de duración del ejercicio de revisión del código: **14/06/2023 16:
 <table>
     <tr>
         <th>Checklist</th>
-        <td>Items Checklist</td>
-        <td>Conclusiones</td>
+        <th>Items Checklist</th>
+        <th>Conclusiones</th>
     </tr>
     <tr>
-        <th rowspan="5">Estandares de codificación</th>
+        <td rowspan="5">Estandares de codificación.</td>
         <td>Convenciones de nombres</td>
         <td></td>
     </tr>
@@ -89,6 +89,23 @@ Fecha/hora de duración del ejercicio de revisión del código: **14/06/2023 16:
     </tr>
     <tr>
         <td>Comentarios significativos y válidos.</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Estilo consistente de bloques de código.</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Indentación consistente.</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="6">Principio de diseño.</td>
+        <td>Clase o método no bien modularizado.</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Clase o método no bien modularizado.</td>
         <td></td>
     </tr>
 <!-- Resto de las filas -->
