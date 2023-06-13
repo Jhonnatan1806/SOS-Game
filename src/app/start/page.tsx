@@ -14,6 +14,7 @@ import { Difficulty, GameMode, GamePlayers, GameState, GameType, GameWinner, Let
 import { Essentials, Movement, WinLine } from "@/classes/interfaces";
 import { GameController } from "@/classes/controllers";
 import { Game } from "@/classes/models";
+import { MoveGenerator } from "@/classes/helpers";
 
 export default function GamePlay() {
     const gameContext = useGameContext();
@@ -89,8 +90,10 @@ export default function GamePlay() {
     };
 
     const executeMovement = (movement: Movement): void => {
-        writeCell(movement.row, movement.column, movement.letter);
-        changeTurn();
+        const isValidMove: boolean = writeCell(movement.row, movement.column, movement.letter);
+        if (isValidMove) {
+            changeTurn();
+        }
         updateVariables();
     };
 
@@ -137,8 +140,10 @@ export default function GamePlay() {
         column: number,
         letter: Letter
     ): void => {
-        writeCell(row, column, letter);
-        changeTurn();
+        const isValidMove: boolean = writeCell(row, column, letter);
+        if (isValidMove){
+            changeTurn();
+        }
         updateVariables();
     };
 
@@ -151,24 +156,29 @@ export default function GamePlay() {
             new Promise((resolve) => setTimeout(resolve, ms));
 
         await delay(500);
-        writeCellBot();
-        changeTurn();
+        const isValidMove: boolean = writeCellBot();
+        if (isValidMove){
+            changeTurn();
+        }
         updateVariables();
     };
 
-    const writeCell = (row: number, column: number, letter: Letter): void => {
+    const writeCell = (row: number, column: number, letter: Letter): boolean => {
         if (!gameController || !gameController.makeMove(row, column, letter)) {
-            return;
+            return false;
         }
         check(row, column, letter);
+        return true;
     };
 
-    const writeCellBot = (): void => {
+    const writeCellBot = (): boolean => {
         if (!gameController) {
-            return;
+            return false;
         }
-        const [row, col, letter] = gameController.botMove();
-        writeCell(row, col, letter);
+        const board = gameController.getGame().getBoard();
+        const generator = new MoveGenerator(board,essentials.gameDifficulty);
+        const [row, col, letter] = gameController.botMove(generator);
+        return writeCell(row, col, letter);
     };
 
     const check = (row: number, column: number, letter: Letter): void => {

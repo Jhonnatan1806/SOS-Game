@@ -1,6 +1,6 @@
 import { GameState, GameType, GameWinner, Letter } from "@/classes/constants";
 import { Checker, MoveGenerator } from "@/classes/helpers";
-import { WinLine } from "@/classes/interfaces";
+import { MakeMove, WinLine } from "@/classes/interfaces";
 import { Game, Player, Record } from "@/classes/models";
 
 /**
@@ -54,9 +54,9 @@ export class GameController {
     }
 
     /**
-     * Retorna `true` si el juego ha terminado.
+     * Retorna el estado del juego.
      *
-     * @returns `true` si el juego ha terminado, `false` en caso contrario.
+     * @returns El estado del juego.
      */
     public getGameState(): GameState {
         return this.gameState;
@@ -145,14 +145,11 @@ export class GameController {
      * Realiza un movimiento de la Computadora en el tablero
      * y retorna la fila donde se realizó el movimiento.
      *
+     * @param generator - El generador de movimientos.
      * @returns El movimiento del bot.
      */
-    public botMove(): [number, number, Letter] {
-        const board = this.game.getBoard();
-        const { row, column, letter } = MoveGenerator.getMovement(
-            board,
-            this.game.getDifficulty()
-        );
+    public botMove(generator: MakeMove): [number, number, Letter] {
+        const { row, column, letter } = generator.getMovement();
         return [row, column, letter];
     }
 
@@ -173,7 +170,7 @@ export class GameController {
         const points = winLines.length;
         this.getCurrentPlayer().getScore().addPoints(points);
         if (mode === GameType.SIMPLE_GAME) {
-            if (points > 0) {
+            if (points > 0 || board.isFull()) {
                 this.gameState = GameState.FINISHED;
                 for (const line of winLines) {
                     this.addSOSLine(line);

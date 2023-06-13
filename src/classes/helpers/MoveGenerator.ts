@@ -1,27 +1,40 @@
 import { Difficulty, GamePlayers, Letter } from "@/classes/constants";
 import { Checker } from "@/classes/helpers";
-import { Movement } from "@/classes/interfaces";
+import { Movement, MakeMove } from "@/classes/interfaces";
 import { Board } from "@/classes/models";
 
 /**
  * Clase que representa un movimiento de la IA en el tablero.
  */
-export class MoveGenerator {
+export class MoveGenerator implements MakeMove{
+
+    private board: Board;
+    private difficulty: Difficulty;
+
+    /**
+     * Crea un movimiento de la IA.
+     * 
+     * @param board - El tablero del juego.
+     * @param difficulty - La dificultad del juego.
+     */
+    public constructor(board: Board, difficulty: Difficulty) {
+        this.board = board;
+        this.difficulty = difficulty;
+    }
+
     /**
      * Retorna un movimiento de la IA.
      *
-     * @param board - El tablero del juego.
-     * @param difficulty - La dificultad del juego.
      * @returns - Un arreglo con la fila, columna y letra del movimiento.
      */
-    public static getMovement(board: Board, difficulty: Difficulty): Movement {
-        if (difficulty === Difficulty.MEDIUM) {
-            return this.mediumMove(board);
+    public getMovement(): Movement {
+        if (this.difficulty === Difficulty.MEDIUM) {
+            return this.mediumMove(this.board);
         }
-        if (difficulty === Difficulty.HARD) {
-            return this.hardMove(board);
+        if (this.difficulty === Difficulty.HARD) {
+            return this.hardMove(this.board);
         }
-        return this.easyMove(board);
+        return this.easyMove(this.board);
     }
 
     /**
@@ -31,7 +44,7 @@ export class MoveGenerator {
      * @param board - El tablero del juego.
      * @returns Un arreglo con la fila, columna y letra del movimiento.
      */
-    public static easyMove(board: Board): Movement {
+    public easyMove(board: Board): Movement {
         let row: number, column: number;
         do {
             row = Math.floor(Math.random() * board.getRows());
@@ -48,7 +61,7 @@ export class MoveGenerator {
      * @param board - El tablero del juego.
      * @returns Un arreglo con la fila, columna y letra del movimiento.
      */
-    public static mediumMove(board: Board): Movement {
+    public mediumMove(board: Board): Movement {
         const rows = board.getRows();
         const columns = board.getColumns();
         const playerLetters = [Letter.S, Letter.O];
@@ -74,7 +87,7 @@ export class MoveGenerator {
             }
         }
 
-        return MoveGenerator.easyMove(board);
+        return this.easyMove(board);
     }
 
     /**
@@ -84,7 +97,7 @@ export class MoveGenerator {
      * @param board - El tablero del juego.
      * @returns Un arreglo con la fila, columna y letra del movimiento.
      */
-    public static hardMove(board: Board): Movement {
+    public hardMove(board: Board): Movement {
         const rows = board.getRows();
         const columns = board.getColumns();
         const playerLetters = [Letter.S, Letter.O];
@@ -97,7 +110,7 @@ export class MoveGenerator {
                 for (let column = 0; column < columns; column++) {
                     if (board.getCell(row, column) === Letter.EMPTY) {
                         board.setCell(row, column, pletter);
-                        const points = MoveGenerator.evaluateMove(
+                        const points = this.evaluateMove(
                             board,
                             pletter,
                             row,
@@ -120,7 +133,7 @@ export class MoveGenerator {
             return bestMove;
         }
 
-        return MoveGenerator.easyMove(board);
+        return this.easyMove(board);
     }
 
     /**
@@ -132,7 +145,7 @@ export class MoveGenerator {
      * @param column - La columna del movimiento.
      * @returns La evaluacion del movimiento.
      */
-    private static evaluateMove(
+    private evaluateMove(
         board: Board,
         letter: Letter,
         row: number,

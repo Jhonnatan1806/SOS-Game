@@ -19,13 +19,13 @@ export class Game {
      * @param difficulty - La dificultad del juego.
 	 */
 	constructor(
-        size: number | undefined,
-        type: string | undefined,
-        mode: string | undefined,
-        difficulty: string | undefined,
+        size: number = 3,
+        type: GameType = GameType.SIMPLE_GAME,
+        mode: GameMode = GameMode.PVP ,
+        difficulty: Difficulty = Difficulty.EASY,
 	) {
 		this.board = new Board(size,size);
-        this.gameType = type === "General" ? GameType.GENERAL_GAME : GameType.SIMPLE_GAME;
+        this.gameType = type;
         if(mode === GameMode.PVC) {
             this.players = [ new Player(GamePlayers.PLAYER_ONE), new Player(GamePlayers.PLAYER_TWO,true)];
         }else if(mode === GameMode.CVC){
@@ -34,15 +34,7 @@ export class Game {
         else{
             this.players = [ new Player(GamePlayers.PLAYER_ONE), new Player(GamePlayers.PLAYER_TWO)];
         }
-        if(difficulty === "Intermedio"){
-            this.difficulty = Difficulty.MEDIUM;
-        }else if(difficulty === "Dificil"){
-            this.difficulty = Difficulty.HARD;
-        }
-        else{
-            this.difficulty = Difficulty.EASY;
-        }
-
+        this.difficulty = difficulty;
 	}
 
 	/**

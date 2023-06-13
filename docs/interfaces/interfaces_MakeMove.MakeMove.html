@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>GameType | sos-game</title><meta name="description" content="Documentation for sos-game"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><link rel="stylesheet" href="../assets/my-theme.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="search-script"></script></head><body><script>console.log(`Loaded ${location.href}`)</script><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>MakeMove | sos-game</title><meta name="description" content="Documentation for sos-game"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><link rel="stylesheet" href="../assets/my-theme.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="search-script"></script></head><body><script>console.log(`Loaded ${location.href}`)</script><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -25,51 +25,52 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../index.html">sos-game</a></li>
-<li><a href="../modules/constants_GameType.html">constants/GameType</a></li>
-<li><a href="constants_GameType.GameType.html">GameType</a></li></ul>
-<h1>Enumeration GameType<code class="tsd-tag ts-flagReadonly">Readonly</code> </h1></div>
+<li><a href="../modules/interfaces_MakeMove.html">interfaces/MakeMove</a></li>
+<li><a href="interfaces_MakeMove.MakeMove.html">MakeMove</a></li></ul>
+<h1>Interface MakeMove</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography"><p>Representa el tipo de juego.</p>
+<div class="tsd-comment tsd-typography"><p>Representa la interfaz de un crear un movimiento.</p>
 </div>
-<div class="tsd-comment tsd-typography"></div></section><aside class="tsd-sources">
+<div class="tsd-comment tsd-typography"></div></section>
+<section class="tsd-panel tsd-hierarchy">
+<h4>Hierarchy</h4>
+<ul class="tsd-hierarchy">
+<li><span class="target">MakeMove</span></li></ul></section>
+<section class="tsd-panel">
+<h4>Implemented by</h4>
+<ul class="tsd-hierarchy">
+<li><a href="../classes/helpers_MoveGenerator.MoveGenerator.html" class="tsd-signature-type tsd-kind-class">MoveGenerator</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/4f93c25/src/classes/constants/GameType.ts#L5">constants/GameType.ts:5</a></li></ul></aside>
+<li>Defined in interfaces/MakeMove.ts:6</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
 <h5 class="tsd-index-heading uppercase" role="button" aria-expanded="false" tabIndex=0><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1.5 5.50969L8 11.6609L14.5 5.50969L12.5466 3.66086L8 7.96494L3.45341 3.66086L1.5 5.50969Z" fill="var(--color-text)"></path></svg> Index</h5></summary>
 <div class="tsd-accordion-details">
 <section class="tsd-index-section">
-<h3 class="tsd-index-heading">Enumeration Members</h3>
-<div class="tsd-index-list"><a href="constants_GameType.GameType.html#GENERAL_GAME" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-1024"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)"></path></g></svg><span>GENERAL_<wbr/>GAME</span></a>
-<a href="constants_GameType.GameType.html#SIMPLE_GAME" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>SIMPLE_<wbr/>GAME</span></a>
+<h3 class="tsd-index-heading">Methods</h3>
+<div class="tsd-index-list"><a href="interfaces_MakeMove.MakeMove.html#getMovement" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-2048"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)"></path></g></svg><span>get<wbr/>Movement</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
-<h2>Enumeration Members</h2>
-<section class="tsd-panel tsd-member"><a id="GENERAL_GAME" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>GENERAL_<wbr/>GAME</span><a href="#GENERAL_GAME" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" id="icon-anchor"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></g></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-enum-member">GENERAL_<wbr/>GAME</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;General&quot;</span></div>
-<div class="tsd-comment tsd-typography"><p>Modo de juego general</p>
+<h2>Methods</h2>
+<section class="tsd-panel tsd-member"><a id="getMovement" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Movement</span><a href="#getMovement" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" id="icon-anchor"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></g></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="getMovement.getMovement-1"><span class="tsd-kind-call-signature">get<wbr/>Movement</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces_Movement.Movement.html" class="tsd-signature-type tsd-kind-interface">Movement</a><a href="#getMovement.getMovement-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retorna un movimiento.</p>
 </div>
+<h4 class="tsd-returns-title">Returns <a href="interfaces_Movement.Movement.html" class="tsd-signature-type tsd-kind-interface">Movement</a></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/4f93c25/src/classes/constants/GameType.ts#L14">constants/GameType.ts:14</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="SIMPLE_GAME" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>SIMPLE_<wbr/>GAME</span><a href="#SIMPLE_GAME" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-enum-member">SIMPLE_<wbr/>GAME</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;Simple&quot;</span></div>
-<div class="tsd-comment tsd-typography"><p>Modo de juego simple</p>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/4f93c25/src/classes/constants/GameType.ts#L9">constants/GameType.ts:9</a></li></ul></aside></section></section></div>
+<li>Defined in interfaces/MakeMove.ts:14</li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary">
 <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>On This Page</h3></summary>
 <div class="tsd-accordion-details">
 <ul>
-<li><a href="#GENERAL_GAME" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>GENERAL_<wbr/>GAME</span></a></li>
-<li><a href="#SIMPLE_GAME" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>SIMPLE_<wbr/>GAME</span></a></li></ul></div></details></div>
+<li><a href="#getMovement" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Movement</span></a></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../index.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg>
 <div>sos-<wbr/>game</div></a>
@@ -98,7 +99,7 @@
 <div>constants/<wbr/>Difficulty</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="constants_Difficulty.Difficulty.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-8"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-enum)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.45 16V7.24H14.49V8.224H10.518V10.936H14.07V11.908H10.518V15.016H14.49V16H9.45Z" fill="var(--color-text)"></path></g></svg>
+<li><a href="../enums/constants_Difficulty.Difficulty.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-8"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-enum)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.45 16V7.24H14.49V8.224H10.518V10.936H14.07V11.908H10.518V15.016H14.49V16H9.45Z" fill="var(--color-text)"></path></g></svg>
 <div>Difficulty
 <div class="menu-item-desc">Representa la dificultad de un jugador IA.</div></div></a></li></ul></div></details></li>
 <li>
@@ -106,7 +107,7 @@
 <div>constants/<wbr/>Game<wbr/>Mode</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="constants_GameMode.GameMode.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
+<li><a href="../enums/constants_GameMode.GameMode.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
 <div>Game<wbr/>Mode
 <div class="menu-item-desc">Representa el modo de juego.</div></div></a></li></ul></div></details></li>
 <li>
@@ -114,7 +115,7 @@
 <div>constants/<wbr/>Game<wbr/>Players</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="constants_GamePlayers.GamePlayers.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
+<li><a href="../enums/constants_GamePlayers.GamePlayers.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
 <div>Game<wbr/>Players
 <div class="menu-item-desc">Representa los jugadores del juego.</div></div></a></li></ul></div></details></li>
 <li>
@@ -122,15 +123,15 @@
 <div>constants/<wbr/>Game<wbr/>State</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="constants_GameState.GameState.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
+<li><a href="../enums/constants_GameState.GameState.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
 <div>Game<wbr/>State
 <div class="menu-item-desc">Representa el estado de un juego.</div></div></a></li></ul></div></details></li>
 <li>
-<details class="tsd-index-accordion" open data-key="constants/GameType"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg><a href="../modules/constants_GameType.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg>
+<details class="tsd-index-accordion" data-key="constants/GameType"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg><a href="../modules/constants_GameType.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg>
 <div>constants/<wbr/>Game<wbr/>Type</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="constants_GameType.GameType.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
+<li><a href="../enums/constants_GameType.GameType.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
 <div>Game<wbr/>Type
 <div class="menu-item-desc">Representa el tipo de juego.</div></div></a></li></ul></div></details></li>
 <li>
@@ -138,7 +139,7 @@
 <div>constants/<wbr/>Game<wbr/>Winner</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="constants_GameWinner.GameWinner.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
+<li><a href="../enums/constants_GameWinner.GameWinner.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
 <div>Game<wbr/>Winner
 <div class="menu-item-desc">Representa el ganador del juego.</div></div></a></li></ul></div></details></li>
 <li>
@@ -146,7 +147,7 @@
 <div>constants/<wbr/>Letter</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="constants_Letter.Letter.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
+<li><a href="../enums/constants_Letter.Letter.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
 <div>Letter
 <div class="menu-item-desc">Representa el modo de juego del tablero.</div></div></a></li></ul></div></details></li>
 <li>
@@ -207,15 +208,15 @@
 <div>interfaces/<wbr/>Essentials</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="../interfaces/interfaces_Essentials.Essentials.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-256"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)"></path></g></svg>
+<li><a href="interfaces_Essentials.Essentials.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-256"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)"></path></g></svg>
 <div>Essentials
 <div class="menu-item-desc">Representa los datos esenciales del juego.</div></div></a></li></ul></div></details></li>
 <li>
-<details class="tsd-index-accordion" data-key="interfaces/MakeMove"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg><a href="../modules/interfaces_MakeMove.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg>
+<details class="tsd-index-accordion" open data-key="interfaces/MakeMove"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg><a href="../modules/interfaces_MakeMove.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4"></use></svg>
 <div>interfaces/<wbr/>Make<wbr/>Move</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="../interfaces/interfaces_MakeMove.MakeMove.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>
+<li><a href="interfaces_MakeMove.MakeMove.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>
 <div>Make<wbr/>Move
 <div class="menu-item-desc">Representa la interfaz de un crear un movimiento.</div></div></a></li></ul></div></details></li>
 <li>
@@ -223,7 +224,7 @@
 <div>interfaces/<wbr/>Movement</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="../interfaces/interfaces_Movement.Movement.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>
+<li><a href="interfaces_Movement.Movement.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>
 <div>Movement
 <div class="menu-item-desc">Representa un movimiento en el tablero.</div></div></a></li></ul></div></details></li>
 <li>
@@ -231,7 +232,7 @@
 <div>interfaces/<wbr/>Win<wbr/>Line</div></a></summary>
 <div class="tsd-accordion-details">
 <ul class="tsd-nested-navigation">
-<li><a href="../interfaces/interfaces_WinLine.WinLine.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>
+<li><a href="interfaces_WinLine.WinLine.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>
 <div>Win<wbr/>Line
 <div class="menu-item-desc">Representa una línea ganadora del juego.</div></div></a></li></ul></div></details></li>
 <li>

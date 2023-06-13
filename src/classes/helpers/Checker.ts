@@ -14,7 +14,7 @@ export class Checker {
      * @param player - El jugador.
      * @returns La línea ganadora.
      */
-    static checkPlay(
+    public static checkPlay(
         board: Board,
         movement: Movement,
         player: GamePlayers
@@ -37,7 +37,7 @@ export class Checker {
      * @param player - El jugador.
      * @returns La línea ganadora.
      */
-    static checkO(
+    public static checkO(
         board: Board,
         movement: Movement,
         player: GamePlayers

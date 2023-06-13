@@ -1,13 +1,11 @@
 "use client";
-import { Difficulty } from "@/classes/constants/Difficulty";
-import { GameMode } from "@/classes/constants/GameMode";
-import { GameType } from "@/classes/constants/GameType";
+import { Difficulty, GameMode, GameType } from "@/classes/constants";
 import React, { createContext, useContext, useState } from "react";
 
 interface GameContextType {
-    gameType: string;
-    gameMode: string;
-    gameDifficulty: string;
+    gameType: GameType;
+    gameMode: GameMode;
+    gameDifficulty: Difficulty;
     gameSize: number;
     setGameType: (type: GameType) => void;
     setGameMode: (mode: GameMode) => void;
