@@ -72,54 +72,28 @@ Clase revisada: **MoveGenerator.ts**
 
 Fecha/hora de duración del ejercicio de revisión del código: **14/06/2023 16:00 - 18:00**
 
-| Checklist                   | Items Checklist                                                     | Conclusiones                                     |
-| --------------------------- | ------------------------------------------------------------------- | ------------------------------------------------ |
-| Estandares de condificación | Convenciones de nombres                                             |                                                  |
-| ^                           | Convención de ordenación de argumentos de método                    |                                                  |
-| ^                           | Comentarios significativos y válidos.                               |                                                  |
-| ^                           | Estilo consistente de bloques de código                             |                                                  |
-| ^                           | Indentación consistente                                             |                                                  |
-| Principio de diseño         | Clase o método no bien modularizado                                 |                                                  |
-| ^                           | Visibilidad adecuada de cada variable, método y clase.              |                                                  |
-| ^                           | Clase o método con pobre abstracción                                |                                                  |
-| ^                           | Diseño por contrato (pre/postcondiciones)                           |                                                  |
-| ^                           | Violación del Principio Abierto-Cerrado                             |                                                  |
-| ^                           | Violación del Principio de Responsabilidad Única                    |                                                  |
-| Smells código               | Números mágicos                                                     |                                                  |
-| ^                           | Variable global /clase innecesaria                                  |                                                  |
-| ^                           | Código duplicado                                                    |                                                  |
-| ^                           | Métodos largos                                                      |                                                  |
-| ^                           | Larga lista de parámetros                                           |                                                  |
-| ^                           | Expresión demasiado compleja                                        |                                                  |
-| ^                           | Switch o if-then-else que necesita ser reemplazado con polimorfismo |                                                  |
-| ^                           | Nombre de método o variable cuya intención no está clara            |                                                  |
-| ^                           | ¿Algún método similar en otras clases?                              |                                                  |
-| Errores                     | Fragmento de código con errores                                     | **¿Cuál es el error?** **¿Por qué es un error?** |
-| ^                           | Fragmento de código que no compila                                  | **¿Cuál es el error?** **¿Por qué es un error?** |
-
 <table>
     <tr>
-        <th rowspan="5">Checklist</th>
-        <td>Convenciones de nombres</td>
+        <th>Checklist</th>
+        <td>Items Checklist</td>
         <td>Conclusiones</td>
     </tr>
     <tr>
-        <td>Estandares de condificación</td>
+        <th rowspan="5">Estandares de codificación</th>
+        <td>Convenciones de nombres</td>
+        <td></td>
+    </tr>
+    <tr>
         <td>Convención de ordenación de argumentos de método</td>
         <td></td>
     </tr>
     <tr>
-        <td></td>
         <td>Comentarios significativos y válidos.</td>
-        <td></td>
-    </tr>
-    <tr>
-        <th rowspan="6">Principio de diseño</th>
-        <td>Clase o método no bien modularizado</td>
         <td></td>
     </tr>
 <!-- Resto de las filas -->
 </table>
+
 
 ## 4. Resumen de todo el código
 
