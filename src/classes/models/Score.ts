@@ -13,12 +13,12 @@ export class Score {
     }
 
     /**
-     * Añade puntos al puntaje actual.
+     * Obtiene el puntaje actual.
      *
-     * @param points - Los puntos a añadir.
+     * @returns El puntaje actual.
      */
-    public addPoints(points: number): void {
-        this.points += points;
+    public getPoints(): number {
+        return this.points;
     }
 
     /**
@@ -31,12 +31,12 @@ export class Score {
     }
 
     /**
-     * Obtiene el puntaje actual.
+     * Añade puntos al puntaje actual.
      *
-     * @returns El puntaje actual.
+     * @param points - Los puntos a añadir.
      */
-    public getPoints(): number {
-        return this.points;
+    public addPoints(points: number): void {
+        this.points += points;
     }
 
     /**

@@ -12,7 +12,6 @@ export class GameController {
     private gameWinner: GameWinner;
     private currentPlayerIndex: number;
     private completedLines: WinLine[];
-    private record: Record;
 
     /**
      * Crea un juego de SOS.
@@ -24,7 +23,6 @@ export class GameController {
         this.gameWinner = GameWinner.NONE;
         this.currentPlayerIndex = 0;
         this.completedLines = [];
-        this.record = new Record();
     }
 
     /**
@@ -37,67 +35,12 @@ export class GameController {
     }
 
     /**
-     * Retorna el jugador actual.
-     *
-     * @returns El jugador actual.
-     */
-    public getCurrentPlayer(): Player {
-        return this.game.getPlayers()[this.currentPlayerIndex];
-    }
-
-    /**
-     * Cambia el jugador actual al siguiente jugador en la lista de jugadores.
-     */
-    public changeCurrentPlayer(): void {
-        this.currentPlayerIndex =
-            (this.currentPlayerIndex + 1) % this.game.getPlayers().length;
-    }
-
-    /**
      * Retorna el estado del juego.
      *
      * @returns El estado del juego.
      */
     public getGameState(): GameState {
         return this.gameState;
-    }
-
-    /**
-     * Retorna los movimientos realizados del tablero.
-     *
-     * @returns Los movimientos realizados del tablero.
-     */
-    public getRecord(): Record {
-        return this.record;
-    }
-
-    /**
-     * Retorna los scores de los jugadores.
-     *
-     * @returns Los scores de los jugadores.
-     */
-    public getScores(): number[] {
-        return this.game
-            .getPlayers()
-            .map((player) => player.getScore().getPoints());
-    }
-
-    /**
-     * Retorna la última línea de SOS completada durante el juego.
-     *
-     * @returns La última línea de SOS completada o null si no hay ninguna.
-     */
-    public getCompletedSOSLines(): WinLine[] {
-        return this.completedLines;
-    }
-
-    /**
-     * Agrega una línea de SOS completada durante el juego.
-     *
-     * @param line - La línea de SOS completada.
-     */
-    private addSOSLine(line: WinLine) {
-        this.completedLines.push(line);
     }
 
     /**
@@ -121,6 +64,61 @@ export class GameController {
     }
 
     /**
+     * Retorna la última línea de SOS completada durante el juego.
+     *
+     * @returns La última línea de SOS completada o null si no hay ninguna.
+     */
+    public getCompletedSOSLines(): WinLine[] {
+        return this.completedLines;
+    }
+
+    /**
+     * Retorna los movimientos realizados del tablero.
+     *
+     * @returns Los movimientos realizados del tablero.
+     */
+    public getRecord(): Record {
+        return this.game.getRecord();
+    }
+
+    /**
+     * Retorna los scores de los jugadores.
+     *
+     * @returns Los scores de los jugadores.
+     */
+    public getScores(): number[] {
+        return this.game
+            .getPlayers()
+            .map((player) => player.getScore().getPoints());
+    }
+
+    /**
+     * Retorna el jugador actual.
+     *
+     * @returns El jugador actual.
+     */
+    public getCurrentPlayer(): Player {
+        return this.game.getPlayers()[this.currentPlayerIndex];
+    }
+
+    /**
+     * Cambia el jugador actual al siguiente jugador en la lista de jugadores.
+     */
+    public changeCurrentPlayer(): void {
+        this.currentPlayerIndex =
+            (this.currentPlayerIndex + 1) % this.game.getPlayers().length;
+    }
+
+    /**
+     * Agrega una línea de SOS completada durante el juego.
+     *
+     * @param line - La línea de SOS completada.
+     */
+    private addSOSLine(line: WinLine): void {
+        this.completedLines.push(line);
+    }
+
+    /**
      * Realiza un movimiento en el tablero.
      *
      * @param row - La fila donde se realizará el movimiento.
@@ -137,7 +135,8 @@ export class GameController {
             return false;
         }
         board.setCell(row, column, letter);
-        this.record.addMovement(row, column, letter);
+        const record = this.getRecord();
+        record.addMovement(row, column, letter);
         return true;
     }
 
@@ -198,7 +197,7 @@ export class GameController {
         this.game.getBoard().reset();
         this.game.getPlayers()[0].getScore().reset();
         this.game.getPlayers()[1].getScore().reset();
-        this.record.reset();
+        this.getRecord().reset();
         this.gameState = GameState.PLAYING;
         this.gameWinner = GameWinner.NONE;
         this.currentPlayerIndex = 0;
