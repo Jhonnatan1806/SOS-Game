@@ -25,7 +25,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">Game</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L7">models/Game.ts:7</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L12">models/Game.ts:12</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -41,6 +41,7 @@
 <a href="models_Game.Game.html#difficulty" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>difficulty</span></a>
 <a href="models_Game.Game.html#gameType" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>game<wbr/>Type</span></a>
 <a href="models_Game.Game.html#players" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>players</span></a>
+<a href="models_Game.Game.html#record" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>record</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Methods</h3>
@@ -48,6 +49,7 @@
 <a href="models_Game.Game.html#getDifficulty" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Difficulty</span></a>
 <a href="models_Game.Game.html#getGameMode" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Game<wbr/>Mode</span></a>
 <a href="models_Game.Game.html#getPlayers" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Players</span></a>
+<a href="models_Game.Game.html#getRecord" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Record</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Constructors</h2>
@@ -57,29 +59,23 @@
 <li class="tsd-signature tsd-anchor-link" id="constructor.new_Game"><span class="tsd-kind-constructor-signature">new <wbr/>Game</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">size</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">type</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">mode</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">difficulty</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_Game.Game.html" class="tsd-signature-type tsd-kind-class">Game</a><a href="#constructor.new_Game" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Crea un juego de SOS.</p>
-<ul>
-<li></li>
-</ul>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
 <h5><span class="tsd-kind-parameter">size</span>: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 3</span></h5>
-<div class="tsd-comment tsd-typography"><p>El tamaño del tablero.
-   *</p>
+<div class="tsd-comment tsd-typography"><p>El tamaño del tablero.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li>
 <li>
 <h5><span class="tsd-kind-parameter">type</span>: <a href="../enums/constants_GameType.GameType.html" class="tsd-signature-type tsd-kind-enum">GameType</a><span class="tsd-signature-symbol"> = GameType.SIMPLE_GAME</span></h5>
-<div class="tsd-comment tsd-typography"><p>El tipo de juego.
-   *</p>
+<div class="tsd-comment tsd-typography"><p>El tipo de juego.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li>
 <li>
 <h5><span class="tsd-kind-parameter">mode</span>: <a href="../enums/constants_GameMode.GameMode.html" class="tsd-signature-type tsd-kind-enum">GameMode</a><span class="tsd-signature-symbol"> = GameMode.PVP</span></h5>
-<div class="tsd-comment tsd-typography"><p>El modo de juego.
-   *</p>
+<div class="tsd-comment tsd-typography"><p>El modo de juego.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li>
 <li>
@@ -90,29 +86,34 @@
 <h4 class="tsd-returns-title">Returns <a href="models_Game.Game.html" class="tsd-signature-type tsd-kind-class">Game</a></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L21">models/Game.ts:21</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L27">models/Game.ts:27</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-is-private"><a id="board" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>board</span><a href="#board" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">board</span><span class="tsd-signature-symbol">:</span> <a href="models_Board.Board.html" class="tsd-signature-type tsd-kind-class">Board</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L8">models/Game.ts:8</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L13">models/Game.ts:13</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-private"><a id="difficulty" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>difficulty</span><a href="#difficulty" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">difficulty</span><span class="tsd-signature-symbol">:</span> <a href="../enums/constants_Difficulty.Difficulty.html" class="tsd-signature-type tsd-kind-enum">Difficulty</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L10">models/Game.ts:10</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L15">models/Game.ts:15</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-private"><a id="gameType" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>game<wbr/>Type</span><a href="#gameType" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">game<wbr/>Type</span><span class="tsd-signature-symbol">:</span> <a href="../enums/constants_GameType.GameType.html" class="tsd-signature-type tsd-kind-enum">GameType</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L11">models/Game.ts:11</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L16">models/Game.ts:16</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-private"><a id="players" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>players</span><a href="#players" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">players</span><span class="tsd-signature-symbol">:</span> <a href="models_Player.Player.html" class="tsd-signature-type tsd-kind-class">Player</a><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L9">models/Game.ts:9</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L14">models/Game.ts:14</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private"><a id="record" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>record</span><a href="#record" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">record</span><span class="tsd-signature-symbol">:</span> <a href="models_Record.Record.html" class="tsd-signature-type tsd-kind-class">Record</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L17">models/Game.ts:17</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member"><a id="getBoard" class="tsd-anchor"></a>
@@ -126,7 +127,7 @@
 
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L45">models/Game.ts:45</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L60">models/Game.ts:60</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getDifficulty" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Difficulty</span><a href="#getDifficulty" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -138,7 +139,7 @@
 
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L72">models/Game.ts:72</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L87">models/Game.ts:87</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getGameMode" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Game<wbr/>Mode</span><a href="#getGameMode" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -150,20 +151,31 @@
 
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L54">models/Game.ts:54</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L69">models/Game.ts:69</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getPlayers" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Players</span><a href="#getPlayers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="getPlayers.getPlayers-1"><span class="tsd-kind-call-signature">get<wbr/>Players</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_Player.Player.html" class="tsd-signature-type tsd-kind-class">Player</a><span class="tsd-signature-symbol">[]</span><a href="#getPlayers.getPlayers-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Retorna los jugadores del juego.
-   *</p>
+<div class="tsd-comment tsd-typography"><p>Retorna los jugadores del juego.</p>
 </div>
 <h4 class="tsd-returns-title">Returns <a href="models_Player.Player.html" class="tsd-signature-type tsd-kind-class">Player</a><span class="tsd-signature-symbol">[]</span></h4><p>Un arreglo con los jugadores del juego.</p>
 
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/196fdfc/src/classes/models/Game.ts#L63">models/Game.ts:63</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L78">models/Game.ts:78</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="getRecord" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Record</span><a href="#getRecord" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="getRecord.getRecord-1"><span class="tsd-kind-call-signature">get<wbr/>Record</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_Record.Record.html" class="tsd-signature-type tsd-kind-class">Record</a><a href="#getRecord.getRecord-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retorna el record del juego.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="models_Record.Record.html" class="tsd-signature-type tsd-kind-class">Record</a></h4><p>El record del juego.</p>
+
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/Jhonnatan1806/SOSGame/blob/a2bf743/src/classes/models/Game.ts#L96">models/Game.ts:96</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -188,10 +200,12 @@
 <li><a href="#difficulty" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>difficulty</span></a></li>
 <li><a href="#gameType" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>game<wbr/>Type</span></a></li>
 <li><a href="#players" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>players</span></a></li>
+<li><a href="#record" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>record</span></a></li>
 <li><a href="#getBoard" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Board</span></a></li>
 <li><a href="#getDifficulty" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Difficulty</span></a></li>
 <li><a href="#getGameMode" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Game<wbr/>Mode</span></a></li>
-<li><a href="#getPlayers" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Players</span></a></li></ul></div></details></div>
+<li><a href="#getPlayers" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Players</span></a></li>
+<li><a href="#getRecord" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>get<wbr/>Record</span></a></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../index.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg><span>sos-<wbr/>game</span></a>
 <ul class="tsd-small-nested-navigation">

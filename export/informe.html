@@ -1,0 +1,674 @@
+<!DOCTYPE html><html><head>
+      <title>informe</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\JhonnatanER\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="informe-sprint-5">Informe Sprint 5</h1>
+
+<p>Nombre: <strong>Jhonnatan Antonio Espinoza Rojas</strong></p>
+<p>Fecha: <strong>14/06/2023</strong></p>
+<h2 class="mume-header" id="1-demostraci%C3%B3n-space_invader">1. Demostraci&#xF3;n &#x1F47E;</h2>
+
+<table>
+    <tbody><tr>
+        <th>n</th>
+        <th>Features</th>
+        <th>Estado</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Se graba un juego simple completo de dos jugadores humanos.</td>
+        <td>&#x2714; Completado</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Se graba un juego general completo de dos jugadores humanos.</td>
+        <td>&#x2714; Completado</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Se graba un juego simple completo de jugadores humano-computadora.</td>
+        <td>&#x2714; Completado</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Se graba un juego general completo de jugadores humano-computadora.</td>
+        <td>&#x2714; Completado</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Se graba un juego simple completo de jugadores computadora-computadora.</td>
+        <td>&#x2714; Completado</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Se graba un juego general completo de jugadores computadora-computadora.</td>
+        <td>&#x2714; Completado</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Se realiza el uso de la funci&#xF3;n Record/Replay</td>
+        <td>&#x2714; Completado</td>
+    </tr>
+</tbody></table>
+<h3 class="mume-header" id="diagrama-de-clases">Diagrama de clases</h3>
+
+<p><img src="https://raw.githubusercontent.com/Jhonnatan1806/SOSGame/main/public/images/diagram.png" alt="Diagrama de clases"></p>
+<h2 class="mume-header" id="2-historias-de-usuario-bust_in_silhouette">2. Historias de usuario &#x1F464;</h2>
+
+<h3 class="mume-header" id="historia-de-usuario">Historia de usuario</h3>
+
+<p>Como <strong>Jugador</strong> quiero <strong>grabar/reproducir una partida</strong> tal que <strong>pueda ver mis movimientos una vez terminado el juego.</strong></p>
+<p>Nombre de la historia de usuario: <strong>Grabar/Reproducir partida</strong><br>
+Descripci&#xF3;n: <strong>El jugador puede grabar/reproducir su partida una vez terminado el juego.</strong><br>
+Prioridad: <strong>3 (baja)</strong><br>
+Estimaci&#xF3;n: <strong>2 horas</strong></p>
+<h3 class="mume-header" id="criterios-de-aceptaci%C3%B3n">Criterios de aceptaci&#xF3;n</h3>
+
+<p>AC9.1 - El jugador puede grabar/reproducir su partida una vez terminado el juego.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>Given: El juego ha terminado.
+When: El usuario presiona el bot&#xF3;n de reproducir.
+Then: El sistema muestra los movimientos de la partida.
+</code></pre><h2 class="mume-header" id="3-revisi%C3%B3n-de-c%C3%B3digo-pencil">3. Revisi&#xF3;n de c&#xF3;digo &#x1F4DD;</h2>
+
+<p>Clase revisada: <strong>GameController.ts</strong></p>
+<p>Fecha/hora de duraci&#xF3;n del ejercicio de revisi&#xF3;n del c&#xF3;digo: <strong>12/06/2023 10:00 - 12:00</strong></p>
+<table>
+    <tbody><tr>
+        <th>Checklist</th>
+        <th>Items Checklist</th>
+        <th colspan="2">Conclusiones</th>
+    </tr>
+    <tr>
+        <td rowspan="5">Estandares de codificaci&#xF3;n.</td>
+        <td>Convenciones de nombres</td>
+        <td colspan="2">Las clases siguen la convenci&#xF3;n de nombres PascalCase, los m&#xE9;todos siguen la conveci&#xF3;n de nombres camelCase.</td>
+    </tr>
+    <tr>
+        <td>Convenci&#xF3;n de ordenaci&#xF3;n de argumentos de m&#xE9;todo</td>
+        <td colspan="2"> Se sigue la ordenaci&#xF3;n adecuada en la que los metodos getter y setter van despues del constructor y al final se crean los m&#xE9;todos propios de las clases.</td>
+    </tr>
+    <tr>
+        <td>Comentarios significativos y v&#xE1;lidos.</td>
+        <td colspan="2"> Se proporciona comentarios de documentaci&#xF3;n para describir la funcionalidad y el prop&#xF3;sito de los m&#xE9;todos y variables. Los comentarios son significativos y ayudan a comprender el c&#xF3;digo.</td>
+    </tr>
+    <tr>
+        <td>Estilo consistente de bloques de c&#xF3;digo.</td>
+        <td colspan="2">Gracias a prettier podemos mantener un estilo consistente en cada bloque de c&#xF3;digo definiendo previamente las convenciones que usamos en el lenguaje.</td>
+    </tr>
+    <tr>
+        <td>Indentaci&#xF3;n consistente.</td>
+        <td colspan="2">De igual forma con la ayuda de la herramienta prettier podemos lograr mantener una identaci&#xF3;n consistente atraves de todo el codigo ( 1 Tab = 4 espacios )</td>
+    </tr>
+    <tr>
+        <td rowspan="6">Principio de dise&#xF1;o.</td>
+        <td>Clase o m&#xE9;todo no bien modularizado.</td>
+        <td colspan="2">Existe una buena modularizaci&#xF3;n en la clase.</td>
+    </tr>
+    <tr>
+        <td>Visibilidad adecuada de cada variable, m&#xE9;todo y clase.</td>
+        <td colspan="2">Las variables se definen como private, lo que limita su acceso solo dentro de la clase. Los m&#xE9;todos importantes, como getGame(), getCurrentPlayer(), getGameState(), etc., se definen como public para permitir su acceso desde otras partes del programa.</td>
+    </tr>
+    <tr>
+        <td>Clase o m&#xE9;todo con pobre abstracci&#xF3;n.</td>
+        <td colspan="2">El m&#xE9;todo con una pobre abstraccion en la clase gameController es el m&#xE9;todo de checkSOS</td>
+    </tr>
+    <tr>
+        <td>Dise&#xF1;o por contrato (pre/postcondiciones).</td>
+        <td colspan="2">No se muestra expl&#xED;citamente un dise&#xF1;o por contrato utilizando precondiciones y postcondiciones en los m&#xE9;todos. Solo el metodo checkSOS y makeMove muestran un intento de dise&#xF1;o por contrato</td>
+    </tr>
+    <tr>
+        <td>Violaci&#xF3;n del Principio Abierto-Cerrado.</td>
+        <td colspan="2"> La clase GameController esta dise&#xF1;ada para ser extensible, ya que permite agregar nuevas funcionalidades y comportamientos sin modificar la propia clase.</td>
+    </tr>
+    <tr>
+        <td>Violaci&#xF3;n del Principio de Responsabilidad &#xDA;nica.</td>
+        <td colspan="2">Cumple con la responsabilidad unica de controlar el juego pero considero que algunos metodos como checkSOS podrian salir de la clase ya que es una responsabilidad de verificar el tablero</td>
+    </tr>
+    <tr>
+        <td rowspan="9">Smells c&#xF3;digo.</td>
+        <td>N&#xFA;meros m&#xE1;gicos.</td>
+        <td colspan="2">Si, el c&#xF3;digo tiene n&#xFA;meros magicos, para ser especifico el currentPlayerIndex se inicializa con un 0, una soluci&#xF3;n factible seria el uso de constantes, luego de eso si se utilizan constantes para las demas varibales.</td>
+    </tr>
+    <tr>
+        <td>Variable global /clase innecesaria.</td>
+        <td colspan="2">No se utilizan variables globables, debido a que en js y ts se utiliza var, let y const para variables, pero se recomienda no usar var para variables debido a que var se utiliza para declarar variables globales, respetando esa pauta no se ah usado var para declarar variables globales solo let y const </td>
+    </tr>
+    <tr>
+        <td>C&#xF3;digo duplicado.</td>
+        <td colspan="2">No existe c&#xF3;digo duplicado en la clase GameController, por suerte se ah tenido en consideraci&#xF3;n desde un principio para evitar la refactorizaci&#xF3;n constante por este problema</td>
+    </tr>
+    <tr>
+        <td>M&#xE9;todos largos.</td>
+        <td colspan="2">Si existe un m&#xE9;todo largo en esta clase el metodo es el checkSOS, como ya mencione antes lo mejor seria extraer exta clase y llamarla en el makeMove</td>
+    </tr>
+    <tr>
+        <td>Larga lista de par&#xE1;metros.</td>
+        <td colspan="2">No se encontraron listas largas de parametros en los metodos ni en el constructor de la clase</td>
+    </tr>
+    <tr>
+        <td>Expresi&#xF3;n demasiado compleja.</td>
+        <td colspan="2">No se utilizaron expresiones complejas, conla intencion que sea facil de entender para las personas que quisieran tomar como referencia el c&#xF3;digo para sus proyectos</td>
+    </tr>
+    <tr>
+        <td>Switch o if-then-else que necesita ser reemplazado con polimorfismo.</td>
+        <td colspan="2">Si en el checkSOS hay 2 if-else que podrian ser remplazados usando el polimorfismo</td>
+    </tr>
+    <tr>
+        <td>Nombre de m&#xE9;todo o variable cuya intenci&#xF3;n no est&#xE1; clara.</td>
+        <td colspan="2">Considero que checkSOS no esta bien declarada ya que no especifica si verifica el SOS o los puntos o si el juego ah terminado, tampoco considero que la clase reset este bien definida creo que mas claro seria llamarla resetGame especificando que lo que va a reiniciar es el juego completo.</td>
+    </tr>
+    <tr>
+        <td>&#xBF;Alg&#xFA;n m&#xE9;todo similar en otras clases?</td>
+        <td colspan="2">Si el metodo reset en Record y en GameController ademas de algunos getters para que sean accedidos directamente desde el gameController</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Errores.</td>
+        <td>Fragmento de c&#xF3;digo con errores.</td>
+        <td>&#xBF;Cu&#xE1;l es el error?</td>
+        <td>&#xBF;Por qu&#xE9; es un error?</td>
+    </tr>
+    <tr>
+        <td>No se encontraron errores en la clase.</td>
+        <td> - </td>
+        <td> - </td>
+    </tr>
+</tbody></table>
+<h2 class="mume-header" id="4-resumen-de-todo-el-c%C3%B3digo-page_facing_up">4. Resumen de todo el c&#xF3;digo &#x1F4C4;</h2>
+
+<table>
+    <tbody><tr>
+        <th>Modulos</th>
+        <th>Tipos</th>
+        <th>Nombre del archivo de c&#xF3;digo fuente</th>
+        <th>C&#xF3;digo de producci&#xF3;n o prueba?</th>
+        <th># lineas de c&#xF3;digo</th>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td rowspan="19"> L&#xF3;gica de negocio </td>
+        <td rowspan="1">Controllers</td>
+        <td>GameController.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>208</td>
+    </tr>
+    <tr>
+        <td rowspan="5">Models</td>
+        <td>Board.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>103</td>
+    </tr>
+    <tr>
+        <td>Game.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>77</td>
+    </tr>
+    <tr>
+        <td>Player.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Record.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>44</td>
+    </tr>
+    <tr>
+        <td>Score.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>49</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Helpers</td>
+        <td>Checker.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>299</td>
+    </tr>
+    <tr>
+        <td>MoveGeneretor.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>171</td>
+    </tr>
+    <tr>
+        <td rowspan="4">Interfaces</td>
+        <td>Essentials.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>27</td>
+    </tr>
+    <tr>
+        <td>MakeMove.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Movement.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>Winline.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td rowspan="7">Constants</td>
+        <td>Difficulty.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>21</td>
+    </tr>
+    <tr>
+        <td>GameMode.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>21</td>
+    </tr>
+    <tr>
+        <td>GamePlayers.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>GameState.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>GameType.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>GameWinner.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>26</td>
+    </tr>
+    <tr>
+        <td>Letter.ts</td>
+        <td>Producci&#xF3;n</td>
+        <td>21</td>
+    </tr>
+    <tr>
+        <td rowspan="11"> Interfaz Grafica </td>
+        <td rowspan="1">Utils</td>
+        <td>useContextGame.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Pages</td>
+        <td>Home/page.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Setting/page.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>137</td>
+    </tr>
+    <tr>
+        <td>Game/page.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>291</td>
+    </tr>
+    <tr>
+        <td rowspan="7">Components</td>
+        <td>GameBoard.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>56</td>
+    </tr>
+    <tr>
+        <td>GameControls.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>33</td>
+    </tr>
+    <tr>
+        <td>Lines.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>57</td>
+    </tr>
+    <tr>
+        <td>ModalWinner.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>33</td>
+    </tr>
+    <tr>
+        <td>ReplayButton.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>21</td>
+    </tr>
+    <tr>
+        <td>ScoreBoard.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>TurnIndicator.tsx</td>
+        <td>Producci&#xF3;n</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td rowspan="7"> Pruebas Unitarias </td>
+        <td rowspan="7">__Test__</td>
+        <td>ComputerPlayingGame.test.ts</td>
+        <td>Test</td>
+        <td>141</td>
+    </tr>
+    <tr>
+        <td>GeneralGameFinished.test.ts</td>
+        <td>Test</td>
+        <td>90</td>
+    </tr>
+    <tr>
+        <td>GeneralGameWrite.test.ts</td>
+        <td>Test</td>
+        <td>28</td>
+    </tr>
+    <tr>
+        <td>PreGame.test.ts</td>
+        <td>Test</td>
+        <td>34</td>
+    </tr>
+    <tr>
+        <td>RecordGame.test.ts</td>
+        <td>Test</td>
+        <td>31</td>
+    </tr>
+    <tr>
+        <td>SimpleGameFinished.test.ts</td>
+        <td>Test</td>
+        <td>66</td>
+    </tr>
+    <tr>
+        <td>SimpleGameWrite.test.ts</td>
+        <td>Test</td>
+        <td>28</td>
+    </tr>
+</tbody></table>
+<p>Total de lineas de c&#xF3;digo: <strong>2407</strong></p>
+<h2 class="mume-header" id="lecciones-aprendidas-de-la-experiencia-de-desarrollo-del-proyecto-book">Lecciones aprendidas de la experiencia de desarrollo del proyecto. &#x1F4D6;</h2>
+
+<h3 class="mume-header" id="qu%C3%A9-aprendiste-en-el-proyecto">&#xBF;Qu&#xE9; aprendiste en el proyecto?</h3>
+
+<p>Aprend&#xED; a utilizar React, TypeScript y Jest. Tambi&#xE9;n aprend&#xED; a utilizar el patr&#xF3;n de dise&#xF1;o de arquitectura de software MVC (Modelo-Vista-Controlador) y a trabajar con el paradigma de programaci&#xF3;n orientada a objetos. Adem&#xE1;s, aprend&#xED; a utilizar el sistema de control de versiones Git y la plataforma de desarrollo colaborativo GitHub.</p>
+<h2 class="mume-header" id="qu%C3%A9-ganaste-personalmente-con-el-proyecto">&#xBF;Qu&#xE9; ganaste personalmente con el proyecto?</h2>
+
+<p>Desde mi perspectiva personal, disfrut&#xE9; mucho trabajando en este proyecto. Considero que el juego en s&#xED; es extremadamente interesante y me proporcion&#xF3; una gran cantidad de aprendizaje en el &#xE1;mbito del desarrollo de software. En cuanto a la codificaci&#xF3;n, me encontr&#xE9; con varios desaf&#xED;os de logica, pero gracias a las pruebas unitarias pude identificar y solucionarlos a tiempo, evitando as&#xED; perder largas horas en la b&#xFA;squeda de errores. Esto aceler&#xF3; significativamente mi proceso de desarrollo. En lo que respecta al dise&#xF1;o, pude aprovechar al m&#xE1;ximo el uso de componentes y ganchos (hooks), lo que result&#xF3; en un c&#xF3;digo m&#xE1;s limpio y f&#xE1;cil de comprender.</p>
+<p>A lo largo de los sprints, tuve que refactorizar el c&#xF3;digo en varias ocasiones, ya que constantemente surg&#xED;an nuevas funciones o conocimientos que modificaban mi perspectiva sobre c&#xF3;mo abordar la programaci&#xF3;n. Por ejemplo, me pareci&#xF3; sumamente interesante el uso de Stubs, dado que los movimientos de la computadora deb&#xED;an ser aleatorios. Por lo tanto, sent&#xED; la necesidad de implementar esta l&#xF3;gica en mi c&#xF3;digo, lo que me llev&#xF3; a realizar cambios significativos en el gameController y el MoveGenerator de mi aplicaci&#xF3;n.</p>
+<h2 class="mume-header" id="qu%C3%A9-hace-bien-tu-proyecto-y-qu%C3%A9-podr%C3%ADa-hacer-mejor-tu-proyecto">&#xBF;Qu&#xE9; hace bien tu proyecto y qu&#xE9; podr&#xED;a hacer mejor tu proyecto?</h2>
+
+<p>En mi opini&#xF3;n, considero que la aplicaci&#xF3;n cumple con los criterios establecidos y funciona correctamente, aunque reconozco que a&#xFA;n contiene algunos errores. No obstante, siento que el c&#xF3;digo tiene margen de mejora considerable. No logr&#xE9; alcanzar una nivel de abstracci&#xF3;n de c&#xF3;digo muy bueno, lo que me impide considerarlo como un c&#xF3;digo limpio. Adem&#xE1;s, el uso de tailwind CSS directamente en las p&#xE1;ginas, sin hacer uso de componentes personalizados, tampoco me agrada del todo, ya que dificulta la lectura y comprensi&#xF3;n de la l&#xF3;gica de la aplicaci&#xF3;n.</p>
+<p>Un aspecto que debo mejorar es los movimientos generados aleatorariamente en las dificultades medium y hard considero que la implementacion es baja y los movimientos no son los esperados en muchas ocasiones. Por ejemplo, en la dificultad hard, la computadora no siempre elige el movimiento que le permite ganar la partida, sino que en ocasiones elige un movimiento que le permite al jugador ganar la partida. Esto se debe a que la computadora elige un movimiento aleatorio, sin tener en cuenta si el movimiento es ganador o no. Por lo tanto, considero que debo mejorar la l&#xF3;gica de la computadora para que elija un movimiento ganador en lugar de uno aleatorio.</p>
+<p>Otro aspecto que me gustar&#xED;a mejorar es aprovechar al m&#xE1;ximo las capacidades de Next.js, dado que, aunque utilic&#xE9; el framework, no logr&#xE9; utilizar en su totalidad caracter&#xED;sticas como getServerSideProps para realizar llamadas al backend. En lugar de eso, opt&#xE9; por renderizar la mayor parte de la l&#xF3;gica desde el cliente, lo cual desde mi punto de vista puede afectar el rendimiento. Debido a limitaciones de tiempo y a mi nivel de experiencia en el desarrollo, siento que no pude aprovechar al m&#xE1;ximo las funcionalidades de Next.js en este proyecto.</p>
+<p>Sin embargo, considero que adquir&#xED; nuevos conocimientos valiosos que me ayudar&#xE1;n a seguir mejorando en el desarrollo de aplicaciones. Aunque reconozco las &#xE1;reas de mejora en este proyecto, estoy emocionado por seguir aprendiendo y aplicando estas lecciones en futuros desarrollos.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
