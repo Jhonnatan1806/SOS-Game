@@ -51,7 +51,7 @@ Fecha: **14/06/2023**
 
 ### Diagrama de clases
 
-![Diagrama de clases](https://raw.githubusercontent.com/Jhonnatan1806/SOSGame/main/public/images/diagram.png)
+![Diagrama de clases](https://raw.githubusercontent.com/Jhonnatan1806/SOSGame/main/public/images/diagramclass.png)
 
 ## 2. Historias de usuario :bust_in_silhouette:
 
