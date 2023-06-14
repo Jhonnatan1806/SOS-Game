@@ -28,7 +28,7 @@ export default function Home() {
                         </Text>
                     </Flex>
                     <Flex className="w-full flex-row gap-2 justify-end flex-wrap">
-                        <ButtonExternal href="https://github.com/Jhonnatan1806/SOSGame/wiki">
+                        <ButtonExternal href="https://jhonnatan1806.github.io/SOSGame/docs/">
                             Documentación &#8594;
                         </ButtonExternal>
                     </Flex>

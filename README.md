@@ -45,4 +45,4 @@ Existen 3 modos de juegos:
 ## Documentación
 
 La documentacion del proyecto se encuentra en la carpeta `docs` en la raiz del proyecto.
-puedes acceder a la documentacion desde aqui [Documentación SOS Game](https://github.com)
+puedes acceder a la documentacion desde aqui [Documentación SOS Game](https://jhonnatan1806.github.io/SOSGame/docs/)
