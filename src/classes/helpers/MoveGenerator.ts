@@ -80,7 +80,8 @@ export class MoveGenerator implements MakeMove{
                         board.setCell(row, column, Letter.EMPTY);
 
                         if (points >= 1) {
-                            return { row, column, letter };
+                            const random_letter = Math.random() < 0.5 ? Letter.S : Letter.O;
+                            return { row, column, letter:random_letter };
                         }
                     }
                 }
@@ -102,35 +103,25 @@ export class MoveGenerator implements MakeMove{
         const columns = board.getColumns();
         const playerLetters = [Letter.S, Letter.O];
 
-        let maxPoints = -Infinity;
-        let bestMove: Movement | null = null;
-
-        for (const pletter of playerLetters) {
+        for (const letter of playerLetters) {
             for (let row = 0; row < rows; row++) {
                 for (let column = 0; column < columns; column++) {
                     if (board.getCell(row, column) === Letter.EMPTY) {
-                        board.setCell(row, column, pletter);
-                        const points = this.evaluateMove(
+                        board.setCell(row, column, letter);
+                        const movement = { row, column, letter };
+                        const points = Checker.checkPlay(
                             board,
-                            pletter,
-                            row,
-                            column
-                        );
+                            movement,
+                            GamePlayers.PLAYER_TWO
+                        ).length;
                         board.setCell(row, column, Letter.EMPTY);
 
-                        if (points > maxPoints) {
-                            maxPoints = points;
-                            const letter =
-                                Math.random() < 0.5 ? Letter.S : Letter.O;
-                            bestMove = { row, column, letter };
+                        if (points >= 1) {
+                            return { row, column, letter };
                         }
                     }
                 }
             }
-        }
-
-        if (bestMove) {
-            return bestMove;
         }
 
         return this.easyMove(board);
