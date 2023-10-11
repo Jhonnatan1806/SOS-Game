@@ -1,7 +1,7 @@
 # SOS Game
 
 El juego SOS Game es una variante simple y entretenida del clásico Tic Tac Toe. Consiste en formar la palabra "SOS"
-en un tablero mediante la colocación estratégica de letras. Este proyecto fue desarrollado como parte de un curso de desarrollo de software
+en un tablero mediante la colocación estratégica de letras. Este proyecto fue desarrollado como parte de un curso de desarrollo de software.
 Para su realización, se utilizaron las pautas proporcionadas por Kapumota como referencia,
 y se tuvo en cuenta el estilo de diseño de [Google](https://google.github.io/styleguide/tsguide.html).
 
